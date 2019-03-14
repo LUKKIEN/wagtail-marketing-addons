@@ -1,4 +1,3 @@
-from django.apps import apps
 from django.template.defaultfilters import truncatechars
 from django.utils.html import format_html
 from django.utils.translation import ugettext_lazy as _
