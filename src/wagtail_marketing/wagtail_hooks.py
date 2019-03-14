@@ -1,26 +1,27 @@
+from django.apps import apps
 from django.template.defaultfilters import truncatechars
 from django.utils.html import format_html
 from django.utils.translation import ugettext_lazy as _
 
 from wagtail.contrib.modeladmin.options import ModelAdmin, ModelAdminGroup, modeladmin_register
-from wagtail.core.models import Page
 
-from wagtail_marketing.conf import get_wagtail_marketing_setting
+from wagtail_marketing.conf import get_page_model, get_wagtail_marketing_setting
 from wagtail_marketing.helpers import PageAdminURLHelper
 
 
 class SeoListingAdmin(ModelAdmin):
-    model = Page
+    model = get_page_model()
     menu_label = _("SEO Listing")
     menu_icon = 'fa-search'
-    list_display = ('title', 'seo_title', 'search_engine')
+    list_display = ('admin_display_title', 'seo_title', 'search_engine')
+    list_filter = get_wagtail_marketing_setting('LIST_FILTER')
     ordering = ('-seo_title', '-search_description')
-    search_fields = ('title', 'seo_title')
+    search_fields = ('admin_display_title', 'seo_title')
     url_helper_class = PageAdminURLHelper
 
-    def title(self, obj):
+    def admin_display_title(self, obj):
         return obj.get_admin_display_title()
-    title.short_description = _("Page title")
+    admin_display_title.short_description = _("Content page title")
 
     def search_engine(self, obj):
         title = obj.seo_title if obj.seo_title else obj.title
