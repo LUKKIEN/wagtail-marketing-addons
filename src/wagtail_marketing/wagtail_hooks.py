@@ -22,7 +22,7 @@ class SeoListingAdmin(ModelAdmin):
     admin_display_title.short_description = _("Content page title")
 
     def search_engine(self, obj):
-        seo = SeoHelper(obj.title, obj.seo_title, obj.search_description)
+        seo = SeoHelper(obj.get_admin_display_title(), obj.seo_title, obj.search_description)
 
         return format_html(
             '<strong>{}</strong><p>{}</p>',

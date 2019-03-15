@@ -22,7 +22,7 @@ class SeoHelper:
     @cached_property
     def truncated_title(self):
         return truncatechars(
-            self.seo_title or self.seo_title,
+            self.seo_title or self.title,
             get_wagtail_marketing_setting('TITLE_LENGTH'),
         )
 
