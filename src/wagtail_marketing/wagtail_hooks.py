@@ -35,7 +35,12 @@ class SeoListingAdmin(ModelAdmin):
 
     def score(self, obj):
         seo = self.seo_helper(obj)
-        return seo.score
+        icon = '😏'
+        if seo.score < 35:
+            icon = '😢'
+        elif seo.score > 65:
+            icon = '😄'
+        return format_html('<span style="font-size: 28px;">{}</span>', icon)
     score.short_description = _("Score")
 
     def get_queryset(self, request):
