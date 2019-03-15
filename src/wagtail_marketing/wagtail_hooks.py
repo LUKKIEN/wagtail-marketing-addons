@@ -23,7 +23,7 @@ class SeoListingAdmin(ModelAdmin):
 
     def search_engine(self, obj):
         seo = SeoHelper(obj.get_admin_display_title(), obj.seo_title, obj.search_description)
-
+        
         return format_html(
             '<strong>{}</strong><p>{}</p>',
             seo.truncated_title,

@@ -4,8 +4,12 @@ from django.core.exceptions import ImproperlyConfigured
 
 
 DEFAULT_SETTINGS = {
-    'TITLE_LENGTH': 60,
-    'DESCRIPTION_LENGTH': 150,
+    'MIN_TITLE_LENGTH': 20,
+    'MAX_TITLE_LENGTH': 60,
+    'MIN_TITLE_WORD_COUNT': 4,
+    'MAX_TITLE_WORD_COUNT': 7,
+    'MIN_DESCRIPTION_LENGTH': 80,
+    'MAX_DESCRIPTION_LENGTH': 150,
     'PAGE_MODEL': 'wagtailcore.Page',
     'LIST_FILTER': (),
 }
