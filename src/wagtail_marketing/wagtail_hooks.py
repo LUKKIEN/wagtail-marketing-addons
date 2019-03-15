@@ -15,7 +15,7 @@ class SeoListingAdmin(ModelAdmin):
     list_display = ('admin_display_title', 'seo_title', 'search_engine')
     list_filter = get_wagtail_marketing_setting('LIST_FILTER')
     ordering = ('-seo_title', '-search_description')
-    search_fields = ('admin_display_title', 'seo_title')
+    search_fields = ('title', 'seo_title', 'search_description')
     url_helper_class = PageAdminURLHelper
 
     def admin_display_title(self, obj):
@@ -23,8 +23,8 @@ class SeoListingAdmin(ModelAdmin):
     admin_display_title.short_description = _("Content page title")
 
     def search_engine(self, obj):
-        title = obj.seo_title if obj.seo_title else obj.title
-        description = obj.search_description if obj.search_description else ''
+        title = obj.seo_title or obj.title
+        description = obj.search_description or ''
         return format_html(
             '<strong>{}</strong><p>{}</p>',
             truncatechars(title, get_wagtail_marketing_setting('TITLE_LENGTH')),
