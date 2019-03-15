@@ -11,25 +11,32 @@ class SeoListingAdmin(ModelAdmin):
     model = get_page_model()
     menu_label = _("SEO Listing")
     menu_icon = 'fa-search'
-    list_display = ('admin_display_title', 'seo_title', 'search_engine')
+    list_display = ('admin_display_title', 'seo_title', 'search_engine', 'score')
     list_filter = get_wagtail_marketing_setting('LIST_FILTER')
     ordering = ('-seo_title', '-search_description')
     search_fields = ('title', 'seo_title', 'search_description')
     url_helper_class = PageAdminURLHelper
+
+    def seo_helper(self, obj):
+        return SeoHelper(obj.get_admin_display_title(), obj.seo_title, obj.search_description)
 
     def admin_display_title(self, obj):
         return obj.get_admin_display_title()
     admin_display_title.short_description = _("Content page title")
 
     def search_engine(self, obj):
-        seo = SeoHelper(obj.get_admin_display_title(), obj.seo_title, obj.search_description)
-        
+        seo = self.seo_helper(obj)
         return format_html(
             '<strong>{}</strong><p>{}</p>',
             seo.truncated_title,
             seo.truncated_description
         )
     search_engine.short_description = _("Search engine example")
+
+    def score(self, obj):
+        seo = self.seo_helper(obj)
+        return seo.score
+    score.short_description = _("Score")
 
     def get_queryset(self, request):
         """ Exclude root page from the queryset """

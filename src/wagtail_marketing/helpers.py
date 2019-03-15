@@ -42,7 +42,7 @@ class SeoHelper:
             get_wagtail_marketing_setting('MAX_DESCRIPTION_LENGTH'),
         )
 
-    @property
+    @cached_property
     def score(self):
         score = 0
 
@@ -50,19 +50,22 @@ class SeoHelper:
             len(self.title) >= get_wagtail_marketing_setting('MIN_TITLE_LENGTH') and 
             len(self.title) <= get_wagtail_marketing_setting('MAX_TITLE_LENGTH')
         ):
-            score += 20
+            score += 10
 
         title_word_count = self.title.split()
         if (
             len(title_word_count) >= get_wagtail_marketing_setting('MIN_TITLE_WORD_COUNT') and 
             len(title_word_count) <= get_wagtail_marketing_setting('MAX_TITLE_WORD_COUNT')
         ):
-            score += 30
+            score += 40
 
         if (len(self.description) >= get_wagtail_marketing_setting('MIN_DESCRIPTION_LENGTH')):
             score += 25
 
-        if (len(self.description) <= get_wagtail_marketing_setting('MAX_DESCRIPTION_LENGTH')):
+        if (
+            len(self.description) >= get_wagtail_marketing_setting('MIN_DESCRIPTION_LENGTH') and
+            len(self.description) <= get_wagtail_marketing_setting('MAX_DESCRIPTION_LENGTH')
+        ):
             score += 25
-        
+
         return score
