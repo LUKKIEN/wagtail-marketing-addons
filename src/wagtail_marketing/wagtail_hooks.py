@@ -1,11 +1,10 @@
-from django.template.defaultfilters import truncatechars
 from django.utils.html import format_html
 from django.utils.translation import ugettext_lazy as _
 
 from wagtail.contrib.modeladmin.options import ModelAdmin, ModelAdminGroup, modeladmin_register
 
 from wagtail_marketing.conf import get_page_model, get_wagtail_marketing_setting
-from wagtail_marketing.helpers import PageAdminURLHelper
+from wagtail_marketing.helpers import PageAdminURLHelper, SeoHelper
 
 
 class SeoListingAdmin(ModelAdmin):
@@ -23,12 +22,12 @@ class SeoListingAdmin(ModelAdmin):
     admin_display_title.short_description = _("Content page title")
 
     def search_engine(self, obj):
-        title = obj.seo_title or obj.title
-        description = obj.search_description or ''
+        seo = SeoHelper(obj.title, obj.seo_title, obj.search_description)
+
         return format_html(
             '<strong>{}</strong><p>{}</p>',
-            truncatechars(title, get_wagtail_marketing_setting('TITLE_LENGTH')),
-            truncatechars(description, get_wagtail_marketing_setting('DESCRIPTION_LENGTH'))
+            seo.truncated_title,
+            seo.truncated_description
         )
     search_engine.short_description = _("Search engine example")
 

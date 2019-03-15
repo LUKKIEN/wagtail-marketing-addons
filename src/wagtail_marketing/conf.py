@@ -17,7 +17,7 @@ def get_wagtail_marketing_setting(name):
 
 def get_page_model():
     """
-    Return the Page model that is active in this project.
+    Return the Page model that is active within the project.
     """
     page = get_wagtail_marketing_setting('PAGE_MODEL')
 
