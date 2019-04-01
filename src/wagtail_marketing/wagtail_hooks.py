@@ -1,5 +1,4 @@
 from django.utils.html import format_html
-from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
 from wagtail.contrib.modeladmin.options import ModelAdmin, ModelAdminGroup, modeladmin_register
@@ -36,14 +35,7 @@ class SeoListingAdmin(ModelAdmin):
 
     def score(self, obj):
         seo = self.seo_helper(obj)
-        icon = '😏'
-        if seo.score == 0:
-            icon = '😱'
-        elif seo.score < 35:
-            icon = '😢'
-        elif seo.score > 65:
-            icon = '😄'
-        return format_html('<span style="font-size: 28px;">{}</span>', icon)
+        return format_html('<span style="font-size: 28px;">{}</span>', seo.icon)
     score.short_description = _("Score")
 
     def get_queryset(self, request):

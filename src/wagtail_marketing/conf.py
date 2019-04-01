@@ -31,5 +31,5 @@ def get_page_model():
         raise ImproperlyConfigured("WAGTAIL_MARKETING_PAGE_MODEL must be of the form 'app_label.model_name'")
     except LookupError:
         raise ImproperlyConfigured(
-            "WAGTAIL_MARKETING_PAGE_MODEL refers to model '%s' that has not been installed" % page
+            "WAGTAIL_MARKETING_PAGE_MODEL refers to model '{}' that has not been installed".format(page)
         )
