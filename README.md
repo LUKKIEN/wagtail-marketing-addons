@@ -1,19 +1,19 @@
 # wagtail-marketing-addons
 
-An (opiniated) overview of all pages and there corresponding promotion settings.
+An (opinionated) overview of all pages and their corresponding promotion settings.
 
 ## Use-case
 
-When dealing with large amounts of pages the content editor experience differs from a marketeers editor experience. A marketeer would more likely to see what page options were set for SEO and SEA purposes. In this case it can be quite a burden to go through page explorer and verifying whether the page title, seo title and search description were set properly.
+When dealing with large amounts of pages the content editor experience differs from a marketeer's editor experience. A marketeer would more likely to see what page options were set for SEO and SEA purposes. In this case it can be quite a burden to go through the page explorer, verifying whether the page title, SEO title and search description were set properly.
 
 ## Solution
 
 The SEO Listing within the `wagtail-marketing-addons` will show: 
 
 * An overview of all pages in a single list;
-* Show relevant properties: page title, SEO title, search description;
-* Show a preview what it could look like in a search engine;
-* Add a basic score indication in how this would perform in terms of word and character count.
+* Relevant properties: page title, SEO title, search description;
+* A preview what it could look like in a search engine;
+* A basic score indicating how this would perform in terms of word and character count.
 
 ![wagtail-marketing-addons screenshot](https://raw.githubusercontent.com/LUKKIEN/wagtail-marketing-addons/master/.github/overview.jpg)
 
