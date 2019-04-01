@@ -20,22 +20,17 @@ clean:
 	@find . -name '*.pyc' | xargs rm -f
 	@find src -name '*.egg-info' | xargs rm -rf
 
-develop: clean requirements
-	@python manage.py migrate
+develop: clean requirements  ## Install the development requirements
 
 docs:  ## Create wagtail_marketing Sphinx documentation
 	@make -C docs/ html
 
 requirements:
-	@pip install --upgrade -e .
+	@pip install -e .
+	@pip install -e .[test,doc]
 
-qt:
+qt:  ## Run the quick variant of the unit tests
 	@py.test -q --reuse-db tests/ --tb=short
-
-coverage:
-	@coverage run --source wagtail_marketing -m py.test -q --reuse-db --tb=short tests
-	@coverage report -m
-	@coverage html
 
 lint:
 	@flake8 src --exclude migrations
@@ -47,5 +42,5 @@ dist: clean
 	@python setup.py sdist bdist_wheel
 	ls -l dist
 
-release: dist
+release: dist  ## Release wagtail_marketing distribution to PyPi
 	twine upload -r lukkien dist/*

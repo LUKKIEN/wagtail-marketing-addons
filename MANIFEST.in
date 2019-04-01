@@ -1,5 +1,6 @@
 include LICENSE
 include README.md
 
+recursive-include src/wagtail_marketing/locale *.mo
 recursive-include src/wagtail_marketing/templates *.*
 recursive-include src/wagtail_marketing/static *
