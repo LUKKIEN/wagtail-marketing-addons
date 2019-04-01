@@ -23,7 +23,7 @@ clean:
 develop: clean requirements  ## Install the development requirements
 
 docs:  ## Create wagtail_marketing Sphinx documentation
-	@make -C docs/ html
+	rm -rf site/ && mkdocs build
 
 requirements:
 	@pip install -e .

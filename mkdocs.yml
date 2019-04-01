@@ -1,0 +1,8 @@
+site_name: wagtail-marketing-addons
+site_description: An (opiniated) set of tools to help marketeers in their day-to-day jobs.
+repo_url: https://github.com/lukkien/wagtail-marketing-addons
+theme: readthedocs
+
+nav:
+  - 'Getting started': getting_started.md
+  - 'Available settings': available_settings.md

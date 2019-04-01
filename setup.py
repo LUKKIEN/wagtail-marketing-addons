@@ -13,8 +13,7 @@ deploy_require = [
 ]
 
 docs_require = [
-    'sphinx',
-    'sphinx_rtd_theme',
+    'mkdocs',
 ]
 
 tests_require = [

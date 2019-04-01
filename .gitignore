@@ -15,6 +15,7 @@ build/
 dist/
 htmlcov/
 docs/_build
+site/
 
 coverage.xml
 db.sqlite3
