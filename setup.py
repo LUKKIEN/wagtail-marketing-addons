@@ -10,6 +10,7 @@ from wagtail_marketing import get_version  # noqa isort:skip
 
 docs_require = [
     'mkdocs',
+    'pymdown-extensions'
 ]
 
 install_requires = [

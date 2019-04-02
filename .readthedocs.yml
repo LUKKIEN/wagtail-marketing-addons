@@ -1,8 +1,13 @@
-# .readthedocs.yml
+# https://docs.readthedocs.io/en/stable/config-file/
 version: 2
 
 mkdocs:
   configuration: mkdocs.yml
 
 python:
-  version: 3.6
+  version: 3.7
+  install:
+    - method: pip
+      path: .
+      extra_requirements:
+        - docs
