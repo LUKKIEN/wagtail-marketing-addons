@@ -26,8 +26,7 @@ docs:  ## Create wagtail_marketing Sphinx documentation
 	rm -rf site/ && mkdocs build
 
 requirements:
-	@pip install -e .
-	@pip install -e .[test,doc]
+	@pip install --upgrade -e .[doc,test]
 
 qt:  ## Run the quick variant of the unit tests
 	@py.test -q --reuse-db tests/ --tb=short
@@ -39,8 +38,10 @@ isort:
 	isort `find . -name '*.py' -not -path '*/migrations/*'`
 
 dist: clean
+	@rm -rf dist/*
 	@python setup.py sdist bdist_wheel
 	ls -l dist
 
 release: dist  ## Release wagtail_marketing distribution to PyPi
+	pip install twine
 	twine upload -r lukkien dist/*

@@ -8,12 +8,12 @@ PROJECT_DIR = os.path.dirname(__file__)
 sys.path.append(os.path.join(PROJECT_DIR, 'src'))
 from wagtail_marketing import get_version  # noqa isort:skip
 
-deploy_require = [
-    'twine',
-]
-
 docs_require = [
     'mkdocs',
+]
+
+install_requires = [
+    'wagtail>=2.0',
 ]
 
 tests_require = [
@@ -21,6 +21,7 @@ tests_require = [
     'pytest',
     'pytest-cov',
     'pytest-django',
+    'pytest-pythonpath',
     'coverage',
     'factory-boy',
     'psycopg2>=2.5.4',
@@ -40,8 +41,9 @@ setup(
     extras_require={
         'test': tests_require,
         'doc': docs_require,
-        'deploy': deploy_require,
     },
+    install_requires=install_requires,
+    tests_require=tests_require,
     packages=find_packages('src'),
     package_dir={'': 'src'},
     include_package_data=True,

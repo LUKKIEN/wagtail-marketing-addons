@@ -13,7 +13,7 @@ class PageAdminURLHelper(AbstractPageAdminURLHelper):
 
 
 class SeoHelper:
-    def __init__(self, page_title, seo_title, search_description):
+    def __init__(self, page_title, seo_title=None, search_description=None):
         self.page_title = page_title
         self.seo_title = seo_title
         self.search_description = search_description
@@ -45,15 +45,15 @@ class SeoHelper:
         score = 0
 
         if (
-            len(self.title) >= get_wagtail_marketing_setting('MIN_TITLE_LENGTH') and
-            len(self.title) <= get_wagtail_marketing_setting('MAX_TITLE_LENGTH')
+            len(self.title) >= get_wagtail_marketing_setting('MIN_TITLE_LENGTH')
+            and len(self.title) <= get_wagtail_marketing_setting('MAX_TITLE_LENGTH')
         ):
             score += 10
 
         title_word_count = self.title.split()
         if (
-            len(title_word_count) >= get_wagtail_marketing_setting('MIN_TITLE_WORD_COUNT') and
-            len(title_word_count) <= get_wagtail_marketing_setting('MAX_TITLE_WORD_COUNT')
+            len(title_word_count) >= get_wagtail_marketing_setting('MIN_TITLE_WORD_COUNT')
+            and len(title_word_count) <= get_wagtail_marketing_setting('MAX_TITLE_WORD_COUNT')
         ):
             score += 40
 
@@ -61,8 +61,8 @@ class SeoHelper:
             score += 25
 
         if (
-            len(self.description) >= get_wagtail_marketing_setting('MIN_DESCRIPTION_LENGTH') and
-            len(self.description) <= get_wagtail_marketing_setting('MAX_DESCRIPTION_LENGTH')
+            len(self.description) >= get_wagtail_marketing_setting('MIN_DESCRIPTION_LENGTH')
+            and len(self.description) <= get_wagtail_marketing_setting('MAX_DESCRIPTION_LENGTH')
         ):
             score += 25
 
