@@ -23,8 +23,15 @@ As stated this plugin contains an opinionated perspective on how you would handl
 With this use-case and solution we're assuming the following rationale on your page:
 
 ```
-    <title>{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %} | Your Site</title>
-    <meta name="description" content="{% if self.search_description %}{{ self.search_description }}{% endif %}">
+<title>{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %} | Your Site</title>
+<meta name="description" content="{% if self.search_description %}{{ self.search_description }}{% endif %}">
 ```
 
 In this case your SEO title (when filled in) has a greater priority over the Page Title.
+
+---
+
+[![Build Status](https://travis-ci.org/LUKKIEN/wagtail-marketing-addons.svg?branch=master)](https://travis-ci.org/LUKKIEN/wagtail-marketing-addons)
+[![Documentation Status](https://readthedocs.org/projects/wagtail-marketing-addons/badge/?version=latest)](https://wagtail-marketing-addons.readthedocs.io/en/latest/?badge=latest)
+[![PyPI version](https://badge.fury.io/py/wagtail-marketing-addons.svg)](https://badge.fury.io/py/wagtail-marketing-addons)
+![GitHub](https://img.shields.io/github/license/lukkien/wagtail-marketing-addons.svg)
