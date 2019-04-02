@@ -43,7 +43,3 @@ install:
   - pip install tox
 script:
   - tox -e $TOXENV
-services:
-  - postgresql
-addons:
-    postgresql: 9.6
