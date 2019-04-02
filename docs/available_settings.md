@@ -1,3 +1,5 @@
+# Basic settings
+
 There are few settings which can be used to configure wagtail-marketing-addons to suit your needs. By default this package makes a few assumptions on what the "best" text lengths are in order for pages to be properly crawled by search engines (Google, Bing). But every search engine has its own rationale and viewport states for displaying.
 
 ---
@@ -84,9 +86,12 @@ WAGTAIL_MARKETING_LIST_FILTER = ('language',)
 
 **Default:** ()
 
+By default there is no additional `list_filter` active on the marketing modeladmin. 
+If desired to do so you can still add your own `list_filter` options.
+
 ---
 
-## Advanced settings
+# Advanced settings
 
 ### Page model reference
 
@@ -96,7 +101,9 @@ WAGTAIL_MARKETING_PAGE_MODEL = 'wagtailcore.Page'
 
 **Default:** wagtailcore.Page
 
-When using an add-on like wagtailtrans or extending the wagtail page model to your own needs, it might be relevant to have the option to pass a custom page model reference. For example the following can be configured for wagtailtrans:
+When using an add-on like wagtailtrans or extending the wagtail page model to your own needs, it might be relevant to have the option to pass a custom page model reference. 
+
+For example the following can be configured for wagtailtrans:
 
 ```python
 WAGTAIL_MARKETING_PAGE_MODEL = 'wagtailtrans.TranslatablePage'

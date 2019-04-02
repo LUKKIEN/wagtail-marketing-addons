@@ -1,4 +1,4 @@
-# wagtail-marketing-addons
+# About wagtail-marketing-addons
 
 An (opinionated) overview of all pages and their corresponding promotion settings.
 
