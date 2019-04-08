@@ -13,3 +13,8 @@ class WagtailMarketingConfig(AppConfig):
                 'You need to register wagtail.contrib.modeladmin in your INSTALLED_APPS'
                 'in order for wagtail-marketing-addons to work'
             )
+        if not self.apps.is_installed('wagtail.contrib.redirects'):
+            raise RuntimeError(
+                'You need to register wagtail.contrib.redirects in your INSTALLED_APPS'
+                'in order for wagtail-marketing-addons to work'
+            )
