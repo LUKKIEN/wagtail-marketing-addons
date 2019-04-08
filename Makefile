@@ -31,6 +31,12 @@ requirements:
 qt:  ## Run the quick variant of the unit tests
 	@py.test -q --reuse-db tests/ --tb=short
 
+coverage:  ## Run tests and open coverage report
+	@coverage run --source wagtail_marketing -m py.test -q --reuse-db --tb=short tests/unit
+	@coverage report -m
+	@coverage html
+	@$(BROWSER) htmlcov/index.html
+
 lint:
 	@flake8 src --exclude migrations
 

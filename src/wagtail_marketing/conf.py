@@ -2,7 +2,6 @@ from django.apps import apps
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 
-
 DEFAULT_SETTINGS = {
     'MIN_TITLE_LENGTH': 20,
     'MAX_TITLE_LENGTH': 60,
