@@ -45,15 +45,15 @@ class SeoHelper:
         score = 0
 
         if (
-            get_wagtail_marketing_setting('MIN_TITLE_LENGTH') <= len(self.title) <=
-            get_wagtail_marketing_setting('MAX_TITLE_LENGTH')
+            get_wagtail_marketing_setting('MIN_TITLE_LENGTH') <= len(self.title)
+            <= get_wagtail_marketing_setting('MAX_TITLE_LENGTH')
         ):
             score += 10
 
         title_word_count = self.title.split()
         if (
-            get_wagtail_marketing_setting('MIN_TITLE_WORD_COUNT') <= len(title_word_count) <=
-            get_wagtail_marketing_setting('MAX_TITLE_WORD_COUNT')
+            get_wagtail_marketing_setting('MIN_TITLE_WORD_COUNT') <= len(title_word_count)
+            <= get_wagtail_marketing_setting('MAX_TITLE_WORD_COUNT')
         ):
             score += 40
 
@@ -61,8 +61,8 @@ class SeoHelper:
             score += 25
 
         if (
-            get_wagtail_marketing_setting('MIN_DESCRIPTION_LENGTH') <= len(self.description) <=
-            get_wagtail_marketing_setting('MAX_DESCRIPTION_LENGTH')
+            get_wagtail_marketing_setting('MIN_DESCRIPTION_LENGTH') <= len(self.description)
+            <= get_wagtail_marketing_setting('MAX_DESCRIPTION_LENGTH')
         ):
             score += 25
 
