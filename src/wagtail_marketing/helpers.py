@@ -54,7 +54,6 @@ class SeoHelper:
         if (
             get_wagtail_marketing_setting('MIN_TITLE_WORD_COUNT') <= len(title_word_count)
             <= get_wagtail_marketing_setting('MAX_TITLE_WORD_COUNT')
-
         ):
             score += 40
 
