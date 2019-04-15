@@ -40,7 +40,7 @@ setup(
     version=get_version().replace(' ', '-'),
     description='A Wagtail add-on for supporting marketeer\'s in daily activities',
     long_description=long_description,
-    long_description_content_type='text/markdown'
+    long_description_content_type='text/markdown',
     author='Lukkien BV',
     author_email='support@lukkien.com',
     url='https://www.lukkien.com/',
