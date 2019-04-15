@@ -32,10 +32,15 @@ tests_require = [
     'isort',
 ]
 
+with open('README.md', 'r') as fh:
+    long_description = fh.read()
+
 setup(
     name='wagtail-marketing-addons',
     version=get_version().replace(' ', '-'),
-    description='A Wagtail add-on for supporting marketeers in daily activities',
+    description='A Wagtail add-on for supporting marketeer\'s in daily activities',
+    long_description=long_description,
+    long_description_content_type='text/markdown'
     author='Lukkien BV',
     author_email='support@lukkien.com',
     url='https://www.lukkien.com/',
