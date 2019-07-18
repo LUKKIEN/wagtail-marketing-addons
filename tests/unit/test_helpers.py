@@ -1,6 +1,10 @@
+from django import VERSION as django_version
 from django.test import override_settings
 
 from wagtail_marketing.helpers import SeoHelper
+
+
+ELLIPSIS_CHARACTER = '…' if django_version >= (2, 2) else '...'
 
 
 class TestPageAdminURLHelper:
@@ -26,12 +30,18 @@ class TestSeoHelper:
     def test_title_truncation_with_the_default_setting(self):
         helper = SeoHelper(
             'My mama always said life was like a box of chocolates. You never know what you are gonna get.')
-        assert helper.truncated_title == 'My mama always said life was like a box of chocolates. Yo...'
+        if django_version >= (2, 2):
+            assert helper.truncated_title == 'My mama always said life was like a box of chocolates. You {}'.format(ELLIPSIS_CHARACTER)
+        else:
+            assert helper.truncated_title == 'My mama always said life was like a box of chocolates. Yo{}'.format(ELLIPSIS_CHARACTER)
 
     @override_settings(WAGTAIL_MARKETING_MAX_TITLE_LENGTH=30)
     def test_title_truncation_with_setting_override(self):
         helper = SeoHelper('Toto, I have a feeling we are not in Kansas anymore.')
-        assert helper.truncated_title == 'Toto, I have a feeling we a...'
+        if django_version >= (2, 2):
+            assert helper.truncated_title == 'Toto, I have a feeling we are{}'.format(ELLIPSIS_CHARACTER)
+        else:
+            assert helper.truncated_title == 'Toto, I have a feeling we a{}'.format(ELLIPSIS_CHARACTER)
 
     @override_settings(WAGTAIL_MARKETING_MAX_TITLE_LENGTH=30)
     def test_seo_title_truncation_with_setting_override(self):
@@ -39,7 +49,10 @@ class TestSeoHelper:
             'Toto, I have a feeling we are not in Kansas anymore.',
             'True courage is in facing danger when you are afraid',
         )
-        assert helper.truncated_title == 'True courage is in facing d...'
+        if django_version >= (2, 2):
+            assert helper.truncated_title == 'True courage is in facing dan{}'.format(ELLIPSIS_CHARACTER)
+        else:
+            assert helper.truncated_title == 'True courage is in facing d{}'.format(ELLIPSIS_CHARACTER)
 
     def test_description_truncation_with_the_default_setting(self):
         helper = SeoHelper(
@@ -48,9 +61,15 @@ class TestSeoHelper:
                                'beautiful places, and then Kansas would have no people at all. It is fortunate for '
                                'Kansas that you have brains.'
         )
-        assert helper.truncated_description == 'If your heads were stuffed with straw, like mine, you would probably ' \
-                                               'all live in the beautiful places, and then Kansas would have no ' \
-                                               'people at all....'
+
+        if django_version >= (2, 2):
+            assert helper.truncated_description == 'If your heads were stuffed with straw, like mine, you would probably ' \
+                                                'all live in the beautiful places, and then Kansas would have no ' \
+                                                'people at all. I{}'.format(ELLIPSIS_CHARACTER)
+        else:
+            assert helper.truncated_description == 'If your heads were stuffed with straw, like mine, you would probably ' \
+                                                'all live in the beautiful places, and then Kansas would have no ' \
+                                                'people at all.{}'.format(ELLIPSIS_CHARACTER)
 
     @override_settings(WAGTAIL_MARKETING_MAX_DESCRIPTION_LENGTH=30)
     def test_description_truncation_with_setting_override(self):
@@ -58,7 +77,11 @@ class TestSeoHelper:
             'Title',
             search_description='I am content in knowing I am as brave as any best that ever lived, if not braver.'
         )
-        assert helper.truncated_description == 'I am content in knowing I a...'
+
+        if django_version >= (2, 2):
+            assert helper.truncated_description == 'I am content in knowing I am {}'.format(ELLIPSIS_CHARACTER)
+        else:
+            assert helper.truncated_description == 'I am content in knowing I a{}'.format(ELLIPSIS_CHARACTER)
 
     def test_score_0(self):
         helper = SeoHelper('', search_description='', seo_title='')
