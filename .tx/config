@@ -1,8 +1,9 @@
 [main]
 host = https://www.transifex.com
 
-[wagtail_marketing]
+[wagtail_marketing.django-po]
 file_filter = src/wagtail_marketing/locale/<lang>/LC_MESSAGES/django.po
+minimum_perc = 0
 source_file = src/wagtail_marketing/locale/en/LC_MESSAGES/django.po
 source_lang = en
 type = PO

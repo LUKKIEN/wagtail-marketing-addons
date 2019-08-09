@@ -3,41 +3,38 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Translators:
+# Janneke Janssen, 2019
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-09 18:07+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2019-08-09 17:41+0200\n"
+"PO-Revision-Date: 2019-08-09 16:04+0000\n"
+"Last-Translator: Janneke Janssen, 2019\n"
+"Language-Team: Dutch (https://www.transifex.com/lukkien/teams/102308/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:8
 msgid "Wagtail Marketing"
-msgstr ""
+msgstr "Wagtail Marketing"
 
-#: wagtail_hooks.py:11
 msgid "SEO Listing"
-msgstr ""
+msgstr "SEO Overzicht"
 
-#: wagtail_hooks.py:24
 msgid "Content page title"
-msgstr ""
+msgstr "Titel"
 
-#: wagtail_hooks.py:33
 msgid "Search engine example"
-msgstr ""
+msgstr "Zoekmachine voorbeeld"
 
-#: wagtail_hooks.py:38
 msgid "Score"
-msgstr ""
+msgstr "Score"
 
-#: wagtail_hooks.py:47
 msgid "Marketing"
-msgstr ""
+msgstr "Marketing"
