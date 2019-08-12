@@ -30,6 +30,7 @@ class TestSeoHelper:
     def test_title_truncation_with_the_default_setting(self):
         helper = SeoHelper(
             'My mama always said life was like a box of chocolates. You never know what you are gonna get.')
+        
         if django_version >= (2, 2):
             assert helper.truncated_title == 'My mama always said life was like a box of chocolates. You {}'.format(ELLIPSIS_CHARACTER)
         else:
@@ -38,6 +39,7 @@ class TestSeoHelper:
     @override_settings(WAGTAIL_MARKETING_MAX_TITLE_LENGTH=30)
     def test_title_truncation_with_setting_override(self):
         helper = SeoHelper('Toto, I have a feeling we are not in Kansas anymore.')
+
         if django_version >= (2, 2):
             assert helper.truncated_title == 'Toto, I have a feeling we are{}'.format(ELLIPSIS_CHARACTER)
         else:
@@ -49,6 +51,7 @@ class TestSeoHelper:
             'Toto, I have a feeling we are not in Kansas anymore.',
             'True courage is in facing danger when you are afraid',
         )
+
         if django_version >= (2, 2):
             assert helper.truncated_title == 'True courage is in facing dan{}'.format(ELLIPSIS_CHARACTER)
         else:

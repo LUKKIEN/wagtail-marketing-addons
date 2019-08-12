@@ -15,6 +15,7 @@ docs_require = [
 
 install_requires = [
     'wagtail>=2.0',
+    'xlrd>=1.2.0',
 ]
 
 tests_require = [
@@ -27,6 +28,8 @@ tests_require = [
     'factory-boy',
     'psycopg2>=2.5.4',
     'tox',
+    'xlwt==1.2.0',
+
     # Linting
     'flake8',
     'isort',
