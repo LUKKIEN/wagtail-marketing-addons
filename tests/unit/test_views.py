@@ -72,4 +72,4 @@ class TestRedirectImportView:
         response = client.post(self.view_url, data=data)
         messages = list(get_messages(response.wsgi_request))
         assert len(messages) == 1
-        assert str(messages[0]) == 'Redirect list was imported succesfully. 5 records were inserted.'
+        assert str(messages[0]) == 'Redirects were imported succesfully. 5 records inserted.'
