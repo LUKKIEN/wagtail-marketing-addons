@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.db import transaction
 from django.forms.utils import ErrorList
 from django.shortcuts import redirect
+from django.utils.translation import ugettext_lazy as _
 from django.views.generic import TemplateView
 from wagtail.contrib.redirects.models import Redirect
 
@@ -22,7 +23,7 @@ class RedirectImportView(TemplateView):
             else:
                 messages.success(
                     request=request,
-                    message=("List is imported succesfully, there where {} inserted".format(after - before))
+                    message=_("Redirect list was imported succesfully. {} records were inserted.".format(after - before))
                 )
         else:
             messages.error(request=request, message=redirect_import_form.errors['file'])
@@ -34,7 +35,7 @@ class RedirectImportView(TemplateView):
         try:
             book = xlrd.open_workbook(file_contents=file_contents.read())
         except IOError:
-            errors.append("Something went wrong while reading the file")
+            errors.append(_("Something went wrong while reading the file."))
             return errors
 
         sheet = book.sheets()[0]
@@ -45,13 +46,9 @@ class RedirectImportView(TemplateView):
                 redirect_link = data[1]
                 if old_path and redirect_link:
                     if old_path.startswith('/') and redirect_link.startswith('/'):
-                        if old_path == redirect_link:
-                            errors.append(
-                                "row: {} - Old path and redirect link, cannot be the same".format(row_id + 1))
-                        else:
-                            Redirect.objects.get_or_create(old_path=old_path, redirect_link=redirect_link)
+                        Redirect.objects.get_or_create(old_path=old_path, redirect_link=redirect_link)
                     else:
-                        errors.append("row: {} - Old path and redirect link, must both start with /".format(row_id + 1))
+                        errors.append(_("Row: {} - The old path and new path, must both start with /".format(row_id + 1)))
                 else:
-                    errors.append("row: {} - Old path and redirect link, must both be filled in".format(row_id + 1))
+                    errors.append(_("Row: {} - The old path and new path, must both be filled in.".format(row_id + 1)))
         return errors

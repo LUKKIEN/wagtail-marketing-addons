@@ -23,13 +23,12 @@ class TestRedirectImportView:
         result = redirect_import_view.read_and_save_data(
             file_contents=SimpleUploadedFile(upload_file.name, upload_file.read()))
         assert result == [
-            'row: 2 - Old path and redirect link, must both start with /',
-            'row: 3 - Old path and redirect link, must both start with /',
-            'row: 4 - Old path and redirect link, must both be filled in',
-            'row: 5 - Old path and redirect link, must both be filled in',
-            'row: 6 - Old path and redirect link, must both be filled in',
-            'row: 7 - Old path and redirect link, must both start with /',
-            'row: 8 - Old path and redirect link, cannot be the same'
+            'Row: 2 - The old path and new path, must both start with /',
+            'Row: 3 - The old path and new path, must both start with /',
+            'Row: 4 - The old path and new path, must both be filled in.',
+            'Row: 5 - The old path and new path, must both be filled in.',
+            'Row: 6 - The old path and new path, must both be filled in.',
+            'Row: 7 - The old path and new path, must both start with /',
         ]
         assert Redirect.objects.count() == 1
 
@@ -59,7 +58,7 @@ class TestRedirectImportView:
         response = client.post(self.view_url, data=data)
         messages = list(get_messages(response.wsgi_request))
         assert len(messages) == 1
-        assert str(messages[0]) == '<ul class="errorlist"><li>Wrong file type, .xlsx and .xls are supported</li></ul>'
+        assert str(messages[0]) == '<ul class="errorlist"><li>Not a supported format. Supported formats: .xlsx, .xls</li></ul>'
 
     def test_post_redirect_import_view_success(self, client):
         client.force_login(user=self.user)
@@ -73,4 +72,4 @@ class TestRedirectImportView:
         response = client.post(self.view_url, data=data)
         messages = list(get_messages(response.wsgi_request))
         assert len(messages) == 1
-        assert str(messages[0]) == 'List is imported succesfully, there where 5 inserted'
+        assert str(messages[0]) == 'Redirect list was imported succesfully. 5 records were inserted.'
