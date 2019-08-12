@@ -3,86 +3,76 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Translators:
+# Janneke Janssen, 2019
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-12 14:41+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2019-08-09 16:04+0000\n"
+"Last-Translator: Janneke Janssen, 2019\n"
+"Language-Team: Dutch (https://www.transifex.com/lukkien/teams/102308/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl_BE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:8
 msgid "Wagtail Marketing"
-msgstr ""
+msgstr "Wagtail Marketing"
 
-#: forms.py:12
 msgid "No file was selected"
-msgstr ""
+msgstr "Er is geen bestand geselecteerd"
 
-#: forms.py:15
 msgid "Not a supported format. Supported formats: .xlsx, .xls"
-msgstr ""
+msgstr "Niet ondersteund formaat. Ondersteunde formaten: .xlsx, .xls"
 
-#: templates/wagtailredirects/index.html:3
-#: templates/wagtailredirects/index.html:21
 msgid "Redirects"
-msgstr ""
+msgstr "Redirects"
 
-#: templates/wagtailredirects/index.html:22
 msgid "Add redirect"
-msgstr ""
+msgstr "Redirect toevoegen"
 
-#: templates/wagtailredirects/index.html:34
 msgid "Select an Excel-file for a bulk import"
-msgstr ""
+msgstr "Selecteer een Excel-bestand voor een bulk import"
 
-#: templates/wagtailredirects/index.html:38
 #, python-format
 msgid ""
 "Instead of adding redirects one at a time, you can also upload a bulk of "
 "redirects with an Excel-file. Take a look at our <a href=\"%(example_file)s"
 "\" target=\"_blank\" rel=\"noopener noreferrer\">example file</a>."
 msgstr ""
+"In plaats van 1 voor 1 een redirect toe te voegen, kunt u er ook meerdere "
+"tegelijk toevoegen middels een Excel-bestand. Bekijk ook ons <a href="
+"\"%(example_file)s\" target=\"_blank\" rel=\"noopener noreferrer"
+"\">voorbeeldbestand</a>."
 
-#: views.py:26
 msgid "Redirects were imported succesfully. {} records inserted."
-msgstr ""
+msgstr "Redirects zijn succesvol geïmporteerd. {} rijen toegevoegd."
 
-#: views.py:38
 msgid "Something went wrong while reading the file."
-msgstr ""
+msgstr "Er is iets fout gegaan bij het lezen van het bestand."
 
-#: views.py:52
 msgid "Row: {} - The old path and new path, must both start with /"
-msgstr ""
+msgstr "Rij: {} - Het oude en nieuwe pad dienen beiden met / te starten."
 
-#: views.py:55
 msgid "Row: {} - The old path and new path, must both be filled in."
-msgstr ""
+msgstr "Rij: {} - Het oude en nieuwe pad dienen beiden te worden ingevuld."
 
-#: wagtail_hooks.py:19
 msgid "SEO Listing"
-msgstr ""
+msgstr "SEO Overzicht"
 
-#: wagtail_hooks.py:32
 msgid "Content page title"
-msgstr ""
+msgstr "Titel"
 
-#: wagtail_hooks.py:41
 msgid "Search engine example"
-msgstr ""
+msgstr "Zoekmachine voorbeeld"
 
-#: wagtail_hooks.py:46
 msgid "Score"
-msgstr ""
+msgstr "Score"
 
-#: wagtail_hooks.py:55
 msgid "Marketing"
-msgstr ""
+msgstr "Marketing"
