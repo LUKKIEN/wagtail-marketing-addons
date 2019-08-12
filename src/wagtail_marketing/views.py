@@ -23,7 +23,7 @@ class RedirectImportView(TemplateView):
             else:
                 messages.success(
                     request=request,
-                    message=_("Redirect list was imported succesfully. {} records were inserted.".format(after - before))
+                    message=_("Redirects were imported succesfully. {} records inserted.".format(after - before))
                 )
         else:
             messages.error(request=request, message=redirect_import_form.errors['file'])
@@ -48,7 +48,9 @@ class RedirectImportView(TemplateView):
                     if old_path.startswith('/') and redirect_link.startswith('/'):
                         Redirect.objects.get_or_create(old_path=old_path, redirect_link=redirect_link)
                     else:
-                        errors.append(_("Row: {} - The old path and new path, must both start with /".format(row_id + 1)))
+                        errors.append(
+                            _("Row: {} - The old path and new path, must both start with /".format(row_id + 1))
+                        )
                 else:
                     errors.append(_("Row: {} - The old path and new path, must both be filled in.".format(row_id + 1)))
         return errors
