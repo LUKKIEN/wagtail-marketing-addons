@@ -30,7 +30,7 @@ class TestRedirectImportView:
             'Row: 6 - The old path and new path, must both be filled in.',
             'Row: 7 - The old path and new path, must both start with /',
         ]
-        assert Redirect.objects.count() == 1
+        assert Redirect.objects.count() == 2
 
     def test_post_redirect_import_view_empty_file(self, client):
         client.force_login(user=self.user)
