@@ -78,6 +78,19 @@ Also this value is responsible for the truncating indication within search engin
 
 ---
 
+### Score
+
+```python
+WAGTAIL_MARKETING_SEO_SCORE_ICONS = ['⭐','⭐⭐','⭐⭐⭐','⭐⭐⭐']
+```
+
+**Default:** `['😱', '😢', '😏', '😄']`
+
+The scoring icons reflect in 4 types on how the content is rated. Starting with: bad, could be better, better and best.
+When the defaults aren't suitable you can override this with other emojis or even fallback the a text option.
+
+---
+
 ### Fields for list_filter usage
 
 ```python
