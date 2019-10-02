@@ -1,3 +1,7 @@
+# 0.3.0 (XX-XX-XXXX)
+
+- Add `WAGTAIL_MARKETING_SEO_SCORE_ICONS` for overriding the current icon set.
+
 # 0.2.0 (12-08-2019)
 
 - Add the bulk redirect import on top of wagtail.contrib.redirects
