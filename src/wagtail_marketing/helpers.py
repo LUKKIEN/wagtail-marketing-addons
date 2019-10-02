@@ -4,8 +4,6 @@ from wagtail.contrib.modeladmin.helpers import PageAdminURLHelper as AbstractPag
 
 from wagtail_marketing.conf import get_wagtail_marketing_setting
 
-SCORE_ICONS = get_wagtail_marketing_setting('SEO_SCORE_ICONS')
-
 
 class PageAdminURLHelper(AbstractPageAdminURLHelper):
     def get_action_url(self, action, *args, **kwargs):
@@ -20,6 +18,17 @@ class SeoHelper:
         self.page_title = page_title
         self.seo_title = seo_title
         self.search_description = search_description
+
+    @property
+    def ICONS(self):
+        icons = get_wagtail_marketing_setting('SEO_SCORE_ICONS')
+
+        if not isinstance(icons, (list, tuple)):
+            raise ImproperlyConfigured("WAGTAIL_MARKETING_SEO_SCORE_ICONS must be a list or a tuple")
+        elif len(icons) != 4:
+            raise ImproperlyConfigured("WAGTAIL_MARKETING_SEO_SCORE_ICONS should have a length of 4")
+
+        return icons
 
     @property
     def title(self):
@@ -73,15 +82,10 @@ class SeoHelper:
 
     @property
     def icon(self):
-        if not isinstance(SCORE_ICONS, (list, tuple)):
-            raise ImproperlyConfigured("WAGTAIL_MARKETING_SEO_SCORE_ICONS must be a list or a tuple")
-        elif len(SCORE_ICONS) != 4:
-            raise ImproperlyConfigured("WAGTAIL_MARKETING_SEO_SCORE_ICONS should have a length of 4")
-
         if self.score == 0:
-            return SCORE_ICONS[0]
+            return self.ICONS[0]
         elif self.score < 35:
-            return SCORE_ICONS[1]
+            return self.ICONS[1]
         elif self.score > 65:
-            return SCORE_ICONS[3]
-        return SCORE_ICONS[2]
+            return self.ICONS[3]
+        return self.ICONS[2]
