@@ -3,6 +3,8 @@ from wagtail.contrib.modeladmin.helpers import PageAdminURLHelper as AbstractPag
 
 from wagtail_marketing.conf import get_wagtail_marketing_setting
 
+SCORE_ICONS = get_wagtail_marketing_setting('SEO_SCORE_ICONS')
+
 
 class PageAdminURLHelper(AbstractPageAdminURLHelper):
     def get_action_url(self, action, *args, **kwargs):
@@ -71,9 +73,9 @@ class SeoHelper:
     @property
     def icon(self):
         if self.score == 0:
-            return '😱'
+            return SCORE_ICONS[0]
         elif self.score < 35:
-            return '😢'
+            return SCORE_ICONS[1]
         elif self.score > 65:
-            return '😄'
-        return '😏'
+            return SCORE_ICONS[3]
+        return SCORE_ICONS[2]

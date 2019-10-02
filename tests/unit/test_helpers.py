@@ -30,7 +30,7 @@ class TestSeoHelper:
     def test_title_truncation_with_the_default_setting(self):
         helper = SeoHelper(
             'My mama always said life was like a box of chocolates. You never know what you are gonna get.')
-        
+
         if django_version >= (2, 2):
             assert helper.truncated_title == 'My mama always said life was like a box of chocolates. You {}'.format(ELLIPSIS_CHARACTER)
         else:

@@ -10,6 +10,7 @@ DEFAULT_SETTINGS = {
     'MIN_DESCRIPTION_LENGTH': 70,
     'MAX_DESCRIPTION_LENGTH': 150,
     'PAGE_MODEL': 'wagtailcore.Page',
+    'SEO_SCORE_ICONS': ['😱', '😢', '😏', '😄'],
     'LIST_FILTER': (),
 }
 
