@@ -1,4 +1,6 @@
+import pytest
 from django import VERSION as django_version
+from django.core.exceptions import ImproperlyConfigured
 from django.test import override_settings
 
 from wagtail_marketing.helpers import SeoHelper
@@ -30,7 +32,7 @@ class TestSeoHelper:
     def test_title_truncation_with_the_default_setting(self):
         helper = SeoHelper(
             'My mama always said life was like a box of chocolates. You never know what you are gonna get.')
-        
+
         if django_version >= (2, 2):
             assert helper.truncated_title == 'My mama always said life was like a box of chocolates. You {}'.format(ELLIPSIS_CHARACTER)
         else:
@@ -160,3 +162,25 @@ class TestSeoHelper:
                            seo_title='')
         assert helper.score == 65
         assert helper.icon == '😏'
+
+    @override_settings(WAGTAIL_MARKETING_SEO_SCORE_ICONS=('bad', 'better', 'okayish', 'good'))
+    def test_score_icon_setting_override(self):
+        helper = SeoHelper('My page title')
+        assert helper.ICONS == ('bad', 'better', 'okayish', 'good')
+
+    @override_settings(WAGTAIL_MARKETING_SEO_SCORE_ICONS='non-list')
+    def test_score_icon_setting_should_raise_exception_on_non_list(self):
+        with pytest.raises(ImproperlyConfigured) as e:
+            helper = SeoHelper('My page title')
+            helper.ICONS
+
+        assert str(e.value) == 'WAGTAIL_MARKETING_SEO_SCORE_ICONS must be a list or a tuple'
+
+    @override_settings(WAGTAIL_MARKETING_SEO_SCORE_ICONS=('a', 'b'))
+    def test_score_icon_setting_should_raise_exception_on_non_length_of_4(self):
+        with pytest.raises(ImproperlyConfigured) as e:
+            helper = SeoHelper('My page title')
+            helper.ICONS
+
+        assert str(e.value) == 'WAGTAIL_MARKETING_SEO_SCORE_ICONS should have a length of 4'
+
