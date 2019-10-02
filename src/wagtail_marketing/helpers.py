@@ -1,3 +1,4 @@
+from django.core.exceptions import ImproperlyConfigured
 from django.template.defaultfilters import truncatechars
 from wagtail.contrib.modeladmin.helpers import PageAdminURLHelper as AbstractPageAdminURLHelper
 
@@ -72,6 +73,11 @@ class SeoHelper:
 
     @property
     def icon(self):
+        if not isinstance(SCORE_ICONS, (list, tuple)):
+            raise ImproperlyConfigured("WAGTAIL_MARKETING_SEO_SCORE_ICONS must be a list or a tuple")
+        elif len(SCORE_ICONS) != 4:
+            raise ImproperlyConfigured("WAGTAIL_MARKETING_SEO_SCORE_ICONS should have a length of 4")
+
         if self.score == 0:
             return SCORE_ICONS[0]
         elif self.score < 35:
