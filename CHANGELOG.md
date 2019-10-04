@@ -1,4 +1,4 @@
-# 0.3.0 (XX-XX-XXXX)
+# 0.3.0 (04-10-2019)
 
 - Add `WAGTAIL_MARKETING_SEO_SCORE_ICONS` for overriding the current icon set.
 
