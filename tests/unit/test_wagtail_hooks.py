@@ -7,11 +7,11 @@ from wagtail_marketing.helpers import SeoHelper
 from wagtail_marketing.wagtail_hooks import SeoListingAdmin
 
 
+@pytest.mark.django_db
 class TestSeoListingAdmin:
     def setup(self):
         self.seolist = SeoListingAdmin()
 
-    @pytest.mark.django_db
     def test_seo_helper(self):
         page = PageFactory()
         result = self.seolist.seo_helper(page)
@@ -21,14 +21,12 @@ class TestSeoListingAdmin:
         assert result.search_description == page.search_description
         assert result.page_title == page.title
 
-    @pytest.mark.django_db
     def test_admin_display_title(self):
         page = PageFactory()
         result = self.seolist.admin_display_title(page)
 
         assert result == 'Title'
 
-    @pytest.mark.django_db
     def test_search_engine(self):
         page = PageFactory()
         result = self.seolist.search_engine(page)
@@ -39,14 +37,12 @@ class TestSeoListingAdmin:
             page.search_description
         )
 
-    @pytest.mark.django_db
     def test_score(self):
         page = PageFactory()
         result = self.seolist.score(page)
 
         assert result == format_html('<span style="font-size: 28px;">{}</span>', '😱')
 
-    @pytest.mark.django_db
     def test_get_queryset_root(self, client):
         Page.objects.delete()
         page = PageFactory(depth=1)
@@ -55,7 +51,6 @@ class TestSeoListingAdmin:
 
         assert len(result) == 0
 
-    @pytest.mark.django_db
     def test_get_queryset(self, client):
         Page.objects.delete()
         page = PageFactory()

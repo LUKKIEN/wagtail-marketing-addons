@@ -3,6 +3,7 @@
 *.swo
 *.python-version
 *.coverage
+*.mo
 
 *.egg-info/
 

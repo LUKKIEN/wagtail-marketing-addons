@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-12 14:41+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps.py:8
+msgid "Wagtail Marketing"
+msgstr ""
+
+#: forms.py:12
+msgid "No file was selected"
+msgstr ""
+
+#: forms.py:15
+msgid "Not a supported format. Supported formats: .xlsx, .xls"
+msgstr ""
+
+#: templates/wagtailredirects/index.html:3
+#: templates/wagtailredirects/index.html:21
+msgid "Redirects"
+msgstr ""
+
+#: templates/wagtailredirects/index.html:22
+msgid "Add redirect"
+msgstr ""
+
+#: templates/wagtailredirects/index.html:34
+msgid "Select an Excel-file for a bulk import"
+msgstr ""
+
+#: templates/wagtailredirects/index.html:38
+#, python-format
+msgid ""
+"Instead of adding redirects one at a time, you can also upload a bulk of "
+"redirects with an Excel-file. Take a look at our <a href=\"%(example_file)s"
+"\" target=\"_blank\" rel=\"noopener noreferrer\">example file</a>."
+msgstr ""
+
+#: views.py:26
+msgid "Redirects were imported succesfully. {} records inserted."
+msgstr ""
+
+#: views.py:38
+msgid "Something went wrong while reading the file."
+msgstr ""
+
+#: views.py:52
+msgid "Row: {} - The old path and new path, must both start with /"
+msgstr ""
+
+#: views.py:55
+msgid "Row: {} - The old path and new path, must both be filled in."
+msgstr ""
+
+#: wagtail_hooks.py:19
+msgid "SEO Listing"
+msgstr ""
+
+#: wagtail_hooks.py:32
+msgid "Content page title"
+msgstr ""
+
+#: wagtail_hooks.py:41
+msgid "Search engine example"
+msgstr ""
+
+#: wagtail_hooks.py:46
+msgid "Score"
+msgstr ""
+
+#: wagtail_hooks.py:55
+msgid "Marketing"
+msgstr ""

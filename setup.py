@@ -15,6 +15,7 @@ docs_require = [
 
 install_requires = [
     'wagtail>=2.0',
+    'xlrd>=1.2.0',
 ]
 
 tests_require = [
@@ -27,6 +28,8 @@ tests_require = [
     'factory-boy',
     'psycopg2>=2.5.4',
     'tox',
+    'xlwt==1.2.0',
+
     # Linting
     'flake8',
     'isort',
@@ -62,7 +65,6 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',

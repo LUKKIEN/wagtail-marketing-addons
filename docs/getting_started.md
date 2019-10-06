@@ -19,8 +19,9 @@ Add it to your `INSTALLED_APPS`:
 ```python
 INSTALLED_APPS = [
     # ...
-    'wagtail.contrib.modeladmin', # this package depends on the modeladmin
     'wagtail_marketing',
+    'wagtail.contrib.modeladmin', # this package and its seo listing depends on the modeladmin
+    'wagtail.contrib.redirects', # if you want to enable bulk redirect imports
     # ...
 ]
 ```

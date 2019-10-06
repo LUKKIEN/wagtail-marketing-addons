@@ -1,0 +1,46 @@
+{% extends "wagtailadmin/base.html" %}
+{% load i18n static %}
+{% block titletag %}{% trans "Redirects" %}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'wagtail_marketing/css/redirects.css' %}" type="text/css" />
+{% endblock %}
+
+{% block extra_js %}
+    {{ block.super }}
+    <script>
+        window.headerSearch = {
+            url: "{% url 'wagtailredirects:index' %}",
+            termInput: "#id_q",
+            targetOutput: "#redirects-results"
+        }
+    </script>
+{% endblock %}
+
+{% block content %}
+    {% trans "Redirects" as redirects_str %}
+    {% trans "Add redirect" as add_str %}
+
+    {% if user_can_add %}
+        {% include "wagtailadmin/shared/header.html" with title=redirects_str icon="redirect" add_link="wagtailredirects:add" add_text=add_str search_url="wagtailredirects:index" %}
+    {% else %}
+        {% include "wagtailadmin/shared/header.html" with title=redirects_str icon="redirect" search_url="wagtailredirects:index" %}
+    {% endif %}
+
+    <div class="nice-padding">
+        <form action="{% url 'redirect_import_view' %}" enctype="multipart/form-data" method="POST" class="c-form">
+            {% csrf_token %}
+            <div class="c-file-input">
+                <button class="button bicolor icon icon-plus">{% trans "Select an Excel-file for a bulk import" %}</button>
+                <input id="fileupload" type="file" name="file" onchange="form.submit();">
+            </div>
+            {% static 'wagtail_marketing/documents/example-file.xlsx' as example_file %}
+            <p>{% blocktrans %}Instead of adding redirects one at a time, you can also upload a bulk of redirects with an Excel-file. Take a look at our <a href="{{ example_file }}" target="_blank" rel="noopener noreferrer">example file</a>.{% endblocktrans %}</p>
+        </form>
+
+        <div id="redirects-results" class="redirects">
+            {% include "wagtailredirects/results.html" %}
+        </div>
+    </div>
+
+{% endblock %}

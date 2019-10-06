@@ -17,5 +17,6 @@ markdown_extensions:
 nav:
   - 'Home': index.md
   - 'Getting started': getting_started.md
+  - 'Features': features.md
   - 'Available settings': available_settings.md
   - 'Release notes': 'changes.md'

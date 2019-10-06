@@ -43,6 +43,12 @@ lint:
 isort:
 	isort `find . -name '*.py' -not -path '*/migrations/*'`
 
+extract_translations: ## Extract strings and create source .po files
+	cd src/wagtail_marketing; django-admin.py makemessages --locale=en --no-wrap
+
+compile_translations: ## Compile translation files and create .mo files
+	cd src/wagtail_marketing; django-admin.py compilemessages
+
 dist: clean
 	@rm -rf dist/*
 	@python setup.py sdist bdist_wheel

@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# Janneke Janssen, 2019
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-12 14:41+0200\n"
+"PO-Revision-Date: 2019-08-09 16:04+0000\n"
+"Last-Translator: Janneke Janssen, 2019\n"
+"Language-Team: Dutch (Netherlands) (https://www.transifex.com/lukkien/"
+"teams/102308/nl_NL/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Wagtail Marketing"
+msgstr "Wagtail Marketing"
+
+msgid "No file was selected"
+msgstr "Er is geen bestand geselecteerd"
+
+msgid "Not a supported format. Supported formats: .xlsx, .xls"
+msgstr "Niet ondersteund formaat. Ondersteunde formaten: .xlsx, .xls"
+
+msgid "Redirects"
+msgstr "Redirects"
+
+msgid "Add redirect"
+msgstr "Redirect toevoegen"
+
+msgid "Select an Excel-file for a bulk import"
+msgstr "Selecteer een Excel-bestand voor een bulk import"
+
+#, python-format
+msgid ""
+"Instead of adding redirects one at a time, you can also upload a bulk of "
+"redirects with an Excel-file. Take a look at our <a href=\"%(example_file)s"
+"\" target=\"_blank\" rel=\"noopener noreferrer\">example file</a>."
+msgstr ""
+"In plaats van 1 voor 1 een redirect toe te voegen, kunt u er ook meerdere "
+"tegelijk toevoegen middels een Excel-bestand. Bekijk ook ons <a href="
+"\"%(example_file)s\" target=\"_blank\" rel=\"noopener noreferrer"
+"\">voorbeeldbestand</a>."
+
+msgid "Redirects were imported succesfully. {} records inserted."
+msgstr "Redirects zijn succesvol geïmporteerd. {} rijen toegevoegd."
+
+msgid "Something went wrong while reading the file."
+msgstr "Er is iets fout gegaan bij het lezen van het bestand."
+
+msgid "Row: {} - The old path and new path, must both start with /"
+msgstr "Rij: {} - Het oude en nieuwe pad dienen beiden met / te starten."
+
+msgid "Row: {} - The old path and new path, must both be filled in."
+msgstr "Rij: {} - Het oude en nieuwe pad dienen beiden te worden ingevuld."
+
+msgid "SEO Listing"
+msgstr "SEO Overzicht"
+
+msgid "Content page title"
+msgstr "Titel"
+
+msgid "Search engine example"
+msgstr "Zoekmachine voorbeeld"
+
+msgid "Score"
+msgstr "Score"
+
+msgid "Marketing"
+msgstr "Marketing"
