@@ -1,5 +1,5 @@
 {% extends "wagtailadmin/base.html" %}
-{% load i18n static %}
+{% load i18n static redirect_tags %}
 {% block titletag %}{% trans "Redirects" %}{% endblock %}
 
 {% block extra_css %}
@@ -30,10 +30,23 @@
     <div class="nice-padding">
         <form action="{% url 'redirect_import_view' %}" enctype="multipart/form-data" method="POST" class="c-form">
             {% csrf_token %}
-            <div class="c-file-input">
-                <button class="button bicolor icon icon-plus">{% trans "Select an Excel-file for a bulk import" %}</button>
-                <input id="fileupload" type="file" name="file" onchange="form.submit();">
+        <div class="field choice_field select">
+            <div class="field-content">
+                <div class="input">
+                    {% get_all_sites as sites %}
+                    <select name="site" id="site_select">
+                        <option value="">{% trans "All sites" %}</option>
+                        {% for site in sites %}
+                            <option value="{{ site.pk }}">{{ site.hostname }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
+        </div>
+        <div class="c-file-input">
+            <button class="button bicolor icon icon-plus">{% trans "Select an Excel-file for a bulk import" %}</button>
+            <input id="fileupload" type="file" name="file" onchange="form.submit();">
+        </div>
             {% static 'wagtail_marketing/documents/example-file.xlsx' as example_file %}
             <p>{% blocktrans %}Instead of adding redirects one at a time, you can also upload a bulk of redirects with an Excel-file. Take a look at our <a href="{{ example_file }}" target="_blank" rel="noopener noreferrer">example file</a>.{% endblocktrans %}</p>
         </form>
