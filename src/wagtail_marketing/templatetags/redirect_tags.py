@@ -1,5 +1,4 @@
 from django import template
-from wagtail.core.models import Site
 
 from ..forms import RedirectImportForm
 
