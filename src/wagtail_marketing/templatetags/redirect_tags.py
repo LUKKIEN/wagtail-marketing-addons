@@ -1,9 +1,11 @@
 from django import template
 from wagtail.core.models import Site
 
+from ..forms import RedirectImportForm
+
 register = template.Library()
 
 
 @register.simple_tag
-def get_all_sites():
-    return Site.objects.all()
+def get_redirect_import_form():
+    return RedirectImportForm()
