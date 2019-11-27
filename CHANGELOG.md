@@ -1,3 +1,7 @@
+# 0.4.0 (27-11-2019)
+
+- Bulk redirect imports can be assigned to all sites or a specific site. (BramManuel)
+
 # 0.3.0 (04-10-2019)
 
 - Add `WAGTAIL_MARKETING_SEO_SCORE_ICONS` for overriding the current icon set.
