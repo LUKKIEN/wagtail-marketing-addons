@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-27 13:25+0100\n"
+"POT-Creation-Date: 2019-11-27 13:26+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,10 @@ msgstr ""
 
 #: templates/wagtailredirects/index.html:34
 #, python-format
-msgid "Instead of adding redirects one at a time, you can also upload a bulk of redirects with an Excel-file. Take a look at our <a href=\"%(example_file)s\" target=\"_blank\" rel=\"noopener noreferrer\">example file</a>."
+msgid ""
+"Instead of adding redirects one at a time, you can also upload a bulk of "
+"redirects with an Excel-file. Take a look at our <a href=\"%(example_file)s"
+"\" target=\"_blank\" rel=\"noopener noreferrer\">example file</a>."
 msgstr ""
 
 #: templates/wagtailredirects/index.html:44
