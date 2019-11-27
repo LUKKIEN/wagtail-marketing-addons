@@ -1,6 +1,8 @@
 sudo: false
 language: python
 cache: pip
+dist: xenial
+
 matrix:
   include:
     # Django 1.11
@@ -18,8 +20,6 @@ matrix:
       python: 3.6
     - env: TOXENV=py37-dj21-wt24
       python: 3.7
-      sudo: true
-      dist: xenial
 
     # Django 2.2
     # Wagtail 2.4
@@ -29,8 +29,6 @@ matrix:
       python: 3.6
     - env: TOXENV=py37-dj22-wt24
       python: 3.7
-      sudo: true
-      dist: xenial
 
     # Django 2.1
     # Wagtail 2.5
@@ -40,8 +38,6 @@ matrix:
       python: 3.6
     - env: TOXENV=py37-dj21-wt25
       python: 3.7
-      sudo: true
-      dist: xenial
 
     # Django 2.2
     # Wagtail 2.5
@@ -51,8 +47,6 @@ matrix:
       python: 3.6
     - env: TOXENV=py37-dj22-wt25
       python: 3.7
-      sudo: true
-      dist: xenial
 
     # Django 2.1
     # Wagtail 2.6
@@ -62,8 +56,6 @@ matrix:
       python: 3.6
     - env: TOXENV=py37-dj21-wt26
       python: 3.7
-      sudo: true
-      dist: xenial
 
     # Django 2.2
     # Wagtail 2.6
@@ -73,8 +65,17 @@ matrix:
       python: 3.6
     - env: TOXENV=py37-dj22-wt26
       python: 3.7
-      sudo: true
-      dist: xenial
+
+    # Django 2.2
+    # Wagtail 2.7
+    - env: TOXENV=py35-dj22-wt27
+      python: 3.5
+    - env: TOXENV=py36-dj22-wt27
+      python: 3.6
+    - env: TOXENV=py37-dj22-wt27
+      python: 3.7
+    - env: TOXENV=py38-dj22-wt27
+      python: 3.8
 
     # Flake 8
     - env: TOXENV=flake8
