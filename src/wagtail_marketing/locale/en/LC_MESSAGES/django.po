@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-12 14:41+0200\n"
+"POT-Creation-Date: 2019-11-27 13:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,16 +22,17 @@ msgstr ""
 msgid "Wagtail Marketing"
 msgstr ""
 
-#: forms.py:12
-msgid "No file was selected"
+#: forms.py:8
+msgid "All sites"
 msgstr ""
 
-#: forms.py:15
+#: forms.py:14
 msgid "Not a supported format. Supported formats: .xlsx, .xls"
 msgstr ""
 
 #: templates/wagtailredirects/index.html:3
 #: templates/wagtailredirects/index.html:21
+#: templates/wagtailredirects/index.html:47
 msgid "Redirects"
 msgstr ""
 
@@ -39,31 +40,32 @@ msgstr ""
 msgid "Add redirect"
 msgstr ""
 
+#: templates/wagtailredirects/index.html:31
+msgid "Bulk import redirects"
+msgstr ""
+
 #: templates/wagtailredirects/index.html:34
-msgid "Select an Excel-file for a bulk import"
-msgstr ""
-
-#: templates/wagtailredirects/index.html:38
 #, python-format
-msgid ""
-"Instead of adding redirects one at a time, you can also upload a bulk of "
-"redirects with an Excel-file. Take a look at our <a href=\"%(example_file)s"
-"\" target=\"_blank\" rel=\"noopener noreferrer\">example file</a>."
+msgid "Instead of adding redirects one at a time, you can also upload a bulk of redirects with an Excel-file. Take a look at our <a href=\"%(example_file)s\" target=\"_blank\" rel=\"noopener noreferrer\">example file</a>."
 msgstr ""
 
-#: views.py:26
+#: templates/wagtailredirects/index.html:44
+msgid "Import"
+msgstr ""
+
+#: views.py:28
 msgid "Redirects were imported succesfully. {} records inserted."
 msgstr ""
 
-#: views.py:38
+#: views.py:41
 msgid "Something went wrong while reading the file."
 msgstr ""
 
-#: views.py:52
+#: views.py:55
 msgid "Row: {} - The old path and new path, must both start with /"
 msgstr ""
 
-#: views.py:55
+#: views.py:58
 msgid "Row: {} - The old path and new path, must both be filled in."
 msgstr ""
 
