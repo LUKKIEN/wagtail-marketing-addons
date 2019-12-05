@@ -1,3 +1,7 @@
+# 0.4.1 (05-12-2019)
+
+- Bugfix: Double old-path record will cause the import to throw a 500
+
 # 0.4.0 (27-11-2019)
 
 - Bulk redirect imports can be assigned to all sites or a specific site. (BramManuel)
