@@ -1,3 +1,7 @@
+# 0.5.0 (XX-XX-XXXX)
+
+...
+
 # 0.4.1 (05-12-2019)
 
 - Bugfix: Double old-path record will cause the import to throw a 500
