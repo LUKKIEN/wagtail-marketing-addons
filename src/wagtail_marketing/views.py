@@ -45,11 +45,22 @@ class RedirectImportView(FormView):
         with transaction.atomic():
             for row_id in range(0, sheet.nrows):
                 data = sheet.row_values(row_id)
-                old_path = data[0]
-                redirect_link = data[1]
+                old_path, redirect_link = data
                 if old_path and redirect_link:
                     if old_path.startswith('/') and redirect_link.startswith('/'):
-                        Redirect.objects.get_or_create(old_path=old_path, redirect_link=redirect_link, site=site)
+                        # Based on the wagtail.contrib.redirects form validation
+                        # https://github.com/wagtail/wagtail/blob/master/wagtail/contrib/redirects/forms.py#L34
+                        _old_path = Redirect.normalise_path(old_path)
+                        duplicates = Redirect.objects.filter(old_path=_old_path, site=site)
+                        if duplicates:
+                            errors.append(
+                                _(
+                                    "Row: {} - Skipped import: the old path is "
+                                    "a duplicate of an earlier record.".format(row_id + 1)
+                                )
+                            )
+                        else:
+                            Redirect.objects.create(old_path=old_path, redirect_link=redirect_link, site=site)
                     else:
                         errors.append(
                             _("Row: {} - The old path and new path, must both start with /".format(row_id + 1))
