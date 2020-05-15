@@ -1,4 +1,8 @@
-# 0.5.0 (15-05-2020)
+# 0.6 (XX-XX-XXXX)
+
+
+
+# 0.5 (15-05-2020)
 
 - Replaces ugettext_lazy with gettext_lazy as introduced in Django 2.0.
 - Officially supports Wagtail 2.7 and up, earlier versions are no longer supported.
@@ -7,19 +11,19 @@
 
 - Bugfix: Double old-path record will cause the import to throw a 500
 
-# 0.4.0 (27-11-2019)
+# 0.4 (27-11-2019)
 
 - Bulk redirect imports can be assigned to all sites or a specific site. (BramManuel)
 
-# 0.3.0 (04-10-2019)
+# 0.3 (04-10-2019)
 
 - Add `WAGTAIL_MARKETING_SEO_SCORE_ICONS` for overriding the current icon set.
 
-# 0.2.0 (12-08-2019)
+# 0.2 (12-08-2019)
 
 - Add the bulk redirect import on top of wagtail.contrib.redirects
 
-# 0.1.0 (15-04-2019)
+# 0.1 (15-04-2019)
 
 - No breaking changes, updated classifiers for a proper stable release
 

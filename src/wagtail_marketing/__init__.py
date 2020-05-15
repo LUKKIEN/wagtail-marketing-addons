@@ -1,6 +1,6 @@
 default_app_config = 'wagtail_marketing.apps.WagtailMarketingConfig'
 
-VERSION = (0, 5, 0, 'final')
+VERSION = (0, 6, 0, 'dev1')
 
 
 def get_version():
