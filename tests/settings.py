@@ -1,5 +1,8 @@
 import os
 
+from wagtail import VERSION as WAGTAIL_VERSION
+
+
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DATABASE_ENGINE', 'django.db.backends.sqlite3'),
@@ -51,16 +54,19 @@ TEMPLATES = [
 ]
 
 
-MIDDLEWARE = (
+MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
 
-    'wagtail.core.middleware.SiteMiddleware',
-)
+
+if WAGTAIL_VERSION < (2, 9):
+    MIDDLEWARE = MIDDLEWARE + ['wagtail.core.middleware.SiteMiddleware']
+
 
 INSTALLED_APPS = (
     'wagtail_marketing',

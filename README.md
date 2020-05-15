@@ -2,6 +2,10 @@
 
 An (opinionated) overview of all pages and their corresponding promotion settings.
 
+## Support
+
+* Wagtail 2.7 and higher
+
 ## Use-case
 
 When dealing with large amounts of pages the content editor experience differs from a marketeer's editor experience. A marketeer would more likely want to see what page options were set for SEO and SEA purposes. In this case it can be quite a burden to go through the page explorer, verifying whether the page title, SEO title and search description were set properly.

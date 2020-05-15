@@ -44,7 +44,7 @@ class TestSeoListingAdmin:
         assert result == format_html('<span style="font-size: 28px;">{}</span>', '😱')
 
     def test_get_queryset_root(self, client):
-        Page.objects.delete()
+        Page.objects.all().delete()
         page = PageFactory(depth=1)
         page.save()
         result = self.seolist.get_queryset(client.request())
@@ -52,7 +52,7 @@ class TestSeoListingAdmin:
         assert len(result) == 0
 
     def test_get_queryset(self, client):
-        Page.objects.delete()
+        Page.objects.all().delete()
         page = PageFactory()
         result = self.seolist.get_queryset(client.request())
 
