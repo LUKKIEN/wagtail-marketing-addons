@@ -1,8 +1,7 @@
-# 0.5.0 (XX-XX-XXXX)
+# 0.5.0 (15-05-2020)
 
 - Replaces ugettext_lazy with gettext_lazy as introduced in Django 2.0.
 - Officially supports Wagtail 2.7 and up, earlier versions are no longer supported.
-
 
 # 0.4.1 (05-12-2019)
 
