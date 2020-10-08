@@ -2,7 +2,7 @@ import factory
 from django.contrib.auth import get_user_model
 
 
-class UserFactory(factory.DjangoModelFactory):
+class UserFactory(factory.django.DjangoModelFactory):
     first_name = factory.Faker('first_name')
     last_name = factory.Faker('last_name')
     username = factory.LazyAttributeSequence(

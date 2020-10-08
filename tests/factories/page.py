@@ -2,7 +2,7 @@ import factory
 from wagtail.core.models import Page
 
 
-class PageFactory(factory.DjangoModelFactory):
+class PageFactory(factory.django.DjangoModelFactory):
     seo_title = 'SEO Title'
     search_description = 'Search description'
     title = 'Title'
