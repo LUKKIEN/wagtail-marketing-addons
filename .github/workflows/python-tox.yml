@@ -1,0 +1,140 @@
+name: Tox
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      max-parallel: 4
+      matrix:
+        environment:
+          # Wagtail 2.7 (LTS)
+          - py35-dj2-wt-27
+          - py35-dj21-wt-27
+          - py35-dj22-wt-27
+          - py36-dj2-wt-27
+          - py36-dj21-wt-27
+          - py36-dj22-wt-27
+          - py37-dj2-wt-27
+          - py37-dj21-wt-27
+          - py37-dj22-wt-27
+          - py38-dj2-wt-27
+          - py38-dj21-wt-27
+          - py38-dj22-wt-27
+
+          # Wagtail 2.8
+          - py35-dj21-wt-28
+          - py35-dj22-wt-28
+          - py36-dj21-wt-28
+          - py36-dj22-wt-28
+          - py37-dj21-wt-28
+          - py37-dj22-wt-28
+          - py38-dj21-wt-28
+          - py38-dj22-wt-28
+          - py36-dj3-wt-28
+          - py37-dj3-wt-28
+          - py38-dj3-wt-28
+
+          # Wagtail 2.9
+          - py36-dj22-wt-29
+          - py37-dj22-wt-29
+          - py38-dj22-wt-29
+          - py36-dj3-wt-29
+          - py37-dj3-wt-29
+          - py38-dj3-wt-29
+
+        include:
+          # Wagtail 2.7 LTS
+          - python-version: 3.5
+            environment: py35-dj2-wt27
+          - python-version: 3.6
+            environment: py36-dj2-wt27
+          - python-version: 3.7
+            environment: py37-dj2-wt27
+          - python-version: 3.8
+            environment: py38-dj2-wt27
+
+          - python-version: 3.5
+            environment: py35-dj21-wt27
+          - python-version: 3.6
+            environment: py36-dj21-wt27
+          - python-version: 3.7
+            environment: py37-dj21-wt27
+          - python-version: 3.8
+            environment: py38-dj21-wt27
+
+          - python-version: 3.5
+            environment: py35-dj22-wt27
+          - python-version: 3.6
+            environment: py36-dj22-wt27
+          - python-version: 3.7
+            environment: py37-dj22-wt27
+          - python-version: 3.8
+            environment: py38-dj22-wt27
+
+          # Wagtail 2.8
+          - python-version: 3.5
+            environment: py35-dj21-wt28
+          - python-version: 3.6
+            environment: py36-dj21-wt28
+          - python-version: 3.7
+            environment: py37-dj21-wt28
+          - python-version: 3.8
+            environment: py38-dj21-wt28
+
+          - python-version: 3.5
+            environment: py35-dj22-wt28
+          - python-version: 3.6
+            environment: py36-dj22-wt28
+          - python-version: 3.7
+            environment: py37-dj22-wt28
+          - python-version: 3.8
+            environment: py38-dj22-wt28
+
+          - python-version: 3.6
+            environment: py36-dj3-wt28
+          - python-version: 3.7
+            environment: py37-dj3-wt28
+          - python-version: 3.8
+            environment: py38-dj3-wt28
+
+          # Wagtail 2.9
+          - python-version: 3.5
+            environment: py35-dj21-wt29
+          - python-version: 3.6
+            environment: py36-dj21-wt29
+          - python-version: 3.7
+            environment: py37-dj21-wt29
+          - python-version: 3.8
+            environment: py38-dj21-wt29
+
+          - python-version: 3.5
+            environment: py35-dj22-wt29
+          - python-version: 3.6
+            environment: py36-dj22-wt29
+          - python-version: 3.7
+            environment: py37-dj22-wt29
+          - python: 3.8
+            environment: py38-dj22-wt29
+
+          - python-version: 3.6
+            environment: py36-dj3-wt29
+          - python-version: 3.7
+            environment: py37-dj3-wt29
+          - python-version: 3.8
+            environment: py38-dj3-wt29
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Requirements
+      run: |
+        python -m pip install --upgrade pip tox
+    - name: Test
+      run: |
+        tox -e ${{ matrix.environment }}
