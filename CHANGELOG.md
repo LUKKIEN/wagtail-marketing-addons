@@ -1,6 +1,7 @@
 # 0.6 (XX-XX-XXXX)
 
-
+- Dropped official support for Wagtail versions lower than 2.11. 
+- Removed the redirect import feature as its part of Wagtail since version 2.10
 
 # 0.5 (15-05-2020)
 

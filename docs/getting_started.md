@@ -4,7 +4,7 @@ Follow the next steps to start using the wagtail-marketing-addons in your projec
 
 ## Requirements
 
-- Wagtail 2.0 or higher
+- Wagtail 2.11 or higher
 
 ## Installation
 
@@ -21,7 +21,6 @@ INSTALLED_APPS = [
     # ...
     'wagtail_marketing',
     'wagtail.contrib.modeladmin', # this package and its seo listing depends on the modeladmin
-    'wagtail.contrib.redirects', # if you want to enable bulk redirect imports
     # ...
 ]
 ```
