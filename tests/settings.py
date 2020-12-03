@@ -2,7 +2,6 @@ import os
 
 from wagtail import VERSION as WAGTAIL_VERSION
 
-
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('DATABASE_ENGINE' , 'django.db.backends.postgresql_psycopg2'),

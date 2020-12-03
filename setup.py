@@ -23,7 +23,6 @@ tests_require = [
     'factory-boy',
     'psycopg2-binary>=2.5.4',
     'tox',
-    'xlwt==1.2.0',
 
     # Linting
     'flake8',

@@ -41,7 +41,7 @@ lint:
 	@flake8 src --exclude migrations
 
 isort:
-	isort `find . -name '*.py' -not -path '*/migrations/*'`
+	@isort -rc src/wagtail_marketing/ tests/
 
 extract_translations: ## Extract strings and create source .po files
 	cd src/wagtail_marketing; django-admin.py makemessages --locale=en --no-wrap
