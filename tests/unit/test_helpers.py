@@ -5,7 +5,6 @@ from django.test import override_settings
 
 from wagtail_marketing.helpers import SeoHelper
 
-
 ELLIPSIS_CHARACTER = '…' if django_version >= (2, 2) else '...'
 
 
@@ -183,4 +182,3 @@ class TestSeoHelper:
             helper.ICONS
 
         assert str(e.value) == 'WAGTAIL_MARKETING_SEO_SCORE_ICONS should have a length of 4'
-

@@ -1,17 +1,9 @@
-from django.conf.urls import url
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 from wagtail.contrib.modeladmin.options import ModelAdmin, ModelAdminGroup, modeladmin_register
-from wagtail.core import hooks
 
 from wagtail_marketing.conf import get_page_model, get_wagtail_marketing_setting
 from wagtail_marketing.helpers import PageAdminURLHelper, SeoHelper
-from wagtail_marketing.views import RedirectImportView
-
-
-@hooks.register('register_admin_urls')
-def urlconf_status_change():
-    return [url(r'^redirects/import/', RedirectImportView.as_view(), name='redirect_import_view'), ]
 
 
 class SeoListingAdmin(ModelAdmin):

@@ -4,7 +4,8 @@ An (opinionated) overview of all pages and their corresponding promotion setting
 
 ## Support
 
-* Wagtail 2.7 and higher
+* Wagtail 2.11 and higher
+
 
 ## Use-case
 

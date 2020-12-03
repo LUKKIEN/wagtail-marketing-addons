@@ -13,11 +13,6 @@ docs_require = [
     'pymdown-extensions'
 ]
 
-install_requires = [
-    'wagtail>=2.0',
-    'xlrd>=1.2.0',
-]
-
 tests_require = [
     # Required for test and coverage
     'pytest',
@@ -28,7 +23,6 @@ tests_require = [
     'factory-boy',
     'psycopg2-binary>=2.5.4',
     'tox',
-    'xlwt==1.2.0',
 
     # Linting
     'flake8',
@@ -51,7 +45,6 @@ setup(
         'test': tests_require,
         'doc': docs_require,
     },
-    install_requires=install_requires,
     tests_require=tests_require,
     packages=find_packages('src'),
     package_dir={'': 'src'},
@@ -65,7 +58,6 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
