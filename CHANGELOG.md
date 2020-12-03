@@ -1,8 +1,9 @@
-# 0.6 (XX-XX-XXXX)
+# 0.6 (03-12-2020)
 
 - Dropped official support for Wagtail versions lower than 2.11, earlier versions are no longer supported. 
   However there are no particular breaking changes if you are still using an older version of Wagtail
 - Removed the redirect import feature as its part of Wagtail since version 2.10
+- Use Wagtail core icons as there is no required dependency for wagtailfontawesome (JanMalte)
 
 # 0.5 (15-05-2020)
 

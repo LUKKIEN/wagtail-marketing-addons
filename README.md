@@ -20,7 +20,7 @@ The SEO Listing within the `wagtail-marketing-addons` will show:
 * A preview what it could look like in a search engine;
 * A basic score indicating how this would perform in terms of word and character count.
 
-![wagtail-marketing-addons screenshot](https://raw.githubusercontent.com/LUKKIEN/wagtail-marketing-addons/master/.github/overview.jpg)
+![wagtail-marketing-addons screenshot](https://raw.githubusercontent.com/LUKKIEN/wagtail-marketing-addons/main/.github/overview.jpg)
 
 ## Things to consider
 

@@ -1,9 +1,8 @@
 # Features
 
-At the moment the Wagtail Marketing Add-ons consist two main features:
+At the moment the Wagtail Marketing Add-ons consists:
 
 * Page listing to see how you SEO is configured;
-* A bulk import feature for configuring redirects;
 
 ## SEO Listing
 
