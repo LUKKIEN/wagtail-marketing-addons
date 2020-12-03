@@ -38,7 +38,7 @@ For more information on getting started, an overview of all available settings a
 
 ---
 
-[![Build Status](https://travis-ci.org/LUKKIEN/wagtail-marketing-addons.svg?branch=master)](https://travis-ci.org/LUKKIEN/wagtail-marketing-addons)
+[![Build Status](https://github.com/LUKKIEN/wagtail-marketing-addons/workflows/test/badge.svg)](https://github.com/LUKKIEN/wagtail-marketing-addons/actions?query=workflow%3Atest)
 [![Documentation Status](https://readthedocs.org/projects/wagtail-marketing-addons/badge/?version=latest)](https://wagtail-marketing-addons.readthedocs.io/en/latest/?badge=latest)
 [![PyPI version](https://badge.fury.io/py/wagtail-marketing-addons.svg)](https://badge.fury.io/py/wagtail-marketing-addons)
 ![GitHub](https://img.shields.io/github/license/lukkien/wagtail-marketing-addons.svg)
