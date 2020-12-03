@@ -26,7 +26,7 @@ tests_require = [
     'pytest-pythonpath',
     'coverage',
     'factory-boy',
-    'psycopg2>=2.5.4',
+    'psycopg2-binary>=2.5.4',
     'tox',
     'xlwt==1.2.0',
 
