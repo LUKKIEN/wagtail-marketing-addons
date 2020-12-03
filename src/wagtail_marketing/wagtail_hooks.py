@@ -9,7 +9,7 @@ from wagtail_marketing.helpers import PageAdminURLHelper, SeoHelper
 class SeoListingAdmin(ModelAdmin):
     model = get_page_model()
     menu_label = _("SEO Listing")
-    menu_icon = 'fa-search'
+    menu_icon = 'search'
     list_display = ('admin_display_title', 'seo_title', 'search_engine', 'score')
     list_filter = get_wagtail_marketing_setting('LIST_FILTER')
     ordering = ('-seo_title', '-search_description')
@@ -45,7 +45,7 @@ class SeoListingAdmin(ModelAdmin):
 
 class WagtailMarketingAdminGroup(ModelAdminGroup):
     menu_label = _("Marketing")
-    menu_icon = 'fa-magic'
+    menu_icon = 'pick'
     menu_order = 500
     items = (SeoListingAdmin,)
 
