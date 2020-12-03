@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-05 14:45+0100\n"
+"POT-Creation-Date: 2020-12-03 13:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,73 +22,22 @@ msgstr ""
 msgid "Wagtail Marketing"
 msgstr ""
 
-#: forms.py:8
-msgid "All sites"
-msgstr ""
-
-#: forms.py:14
-msgid "Not a supported format. Supported formats: .xlsx, .xls"
-msgstr ""
-
-#: templates/wagtailredirects/index.html:3
-#: templates/wagtailredirects/index.html:21
-#: templates/wagtailredirects/index.html:47
-msgid "Redirects"
-msgstr ""
-
-#: templates/wagtailredirects/index.html:22
-msgid "Add redirect"
-msgstr ""
-
-#: templates/wagtailredirects/index.html:31
-msgid "Bulk import redirects"
-msgstr ""
-
-#: templates/wagtailredirects/index.html:34
-#, python-format
-msgid "Instead of adding redirects one at a time, you can also upload a bulk of redirects with an Excel-file. Take a look at our <a href=\"%(example_file)s\" target=\"_blank\" rel=\"noopener noreferrer\">example file</a>."
-msgstr ""
-
-#: templates/wagtailredirects/index.html:44
-msgid "Import"
-msgstr ""
-
-#: views.py:28
-msgid "Redirects were imported succesfully. {} records inserted."
-msgstr ""
-
-#: views.py:41
-msgid "Something went wrong while reading the file."
-msgstr ""
-
-#: views.py:58
-msgid "Row: {} - Skipped import: the old path is a duplicate of an earlier record."
-msgstr ""
-
-#: views.py:66
-msgid "Row: {} - The old path and new path, must both start with /"
-msgstr ""
-
-#: views.py:69
-msgid "Row: {} - The old path and new path, must both be filled in."
-msgstr ""
-
-#: wagtail_hooks.py:19
+#: wagtail_hooks.py:11
 msgid "SEO Listing"
 msgstr ""
 
-#: wagtail_hooks.py:32
+#: wagtail_hooks.py:24
 msgid "Content page title"
 msgstr ""
 
-#: wagtail_hooks.py:41
+#: wagtail_hooks.py:33
 msgid "Search engine example"
 msgstr ""
 
-#: wagtail_hooks.py:46
+#: wagtail_hooks.py:38
 msgid "Score"
 msgstr ""
 
-#: wagtail_hooks.py:55
+#: wagtail_hooks.py:47
 msgid "Marketing"
 msgstr ""

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-05 14:45+0100\n"
+"POT-Creation-Date: 2020-12-03 13:22+0100\n"
 "PO-Revision-Date: 2019-08-09 16:04+0000\n"
 "Last-Translator: Janneke Janssen, 2019\n"
 "Language-Team: Dutch (Belgium) (https://www.transifex.com/lukkien/"
@@ -24,53 +24,6 @@ msgstr ""
 
 msgid "Wagtail Marketing"
 msgstr "Wagtail Marketing"
-
-msgid "All sites"
-msgstr "Alle sites"
-
-msgid "Not a supported format. Supported formats: .xlsx, .xls"
-msgstr "Niet ondersteund formaat. Ondersteunde formaten: .xlsx, .xls"
-
-msgid "Redirects"
-msgstr "Redirects"
-
-msgid "Add redirect"
-msgstr "Redirect toevoegen"
-
-msgid "Bulk import redirects"
-msgstr "Bulk import redirects"
-
-#, python-format
-msgid ""
-"Instead of adding redirects one at a time, you can also upload a bulk of "
-"redirects with an Excel-file. Take a look at our <a href=\"%(example_file)s"
-"\" target=\"_blank\" rel=\"noopener noreferrer\">example file</a>."
-msgstr ""
-"In plaats van 1 voor 1 een redirect toe te voegen, kunt u er ook meerdere "
-"tegelijk toevoegen middels een Excel-bestand. Bekijk ook ons <a href="
-"\"%(example_file)s\" target=\"_blank\" rel=\"noopener noreferrer"
-"\">voorbeeldbestand</a>."
-
-msgid "Import"
-msgstr "Importeer"
-
-msgid "Redirects were imported succesfully. {} records inserted."
-msgstr "Redirects zijn succesvol geïmporteerd. {} rijen toegevoegd."
-
-msgid "Something went wrong while reading the file."
-msgstr "Er is iets fout gegaan bij het lezen van het bestand."
-
-msgid ""
-"Row: {} - Skipped import: the old path is a duplicate of an earlier record."
-msgstr ""
-"Rij: {} - Import overgeslagen: het oude pad is een duplicaat van een eerdere "
-"invoer."
-
-msgid "Row: {} - The old path and new path, must both start with /"
-msgstr "Rij: {} - Het oude en nieuwe pad dienen beiden met / te starten."
-
-msgid "Row: {} - The old path and new path, must both be filled in."
-msgstr "Rij: {} - Het oude en nieuwe pad dienen beiden te worden ingevuld."
 
 msgid "SEO Listing"
 msgstr "SEO Overzicht"
