@@ -211,11 +211,11 @@ jobs:
               python-version: 3.9
 
             - toxenv: py310-dj3-wt215
-              python-version: 3.10
+              python-version: '3.10'
             - toxenv: py310-dj31-wt215
-              python-version: 3.10
+              python-version: '3.10'
             - toxenv: py310-dj32-wt215
-              python-version: 3.10
+              python-version: '3.10'
 
             - toxenv: py37-dj32-wt216
               python-version: 3.7
@@ -233,9 +233,9 @@ jobs:
               python-version: 3.9
 
             - toxenv: py310-dj32-wt216
-              python-version: 3.10
+              python-version: '3.10'
             - toxenv: py310-dj40-wt216
-              python-version: 3.10
+              python-version: '3.10'
 
             - toxenv: py37-dj32-wt3
               python-version: 3.7
@@ -253,9 +253,9 @@ jobs:
               python-version: 3.9
 
             - toxenv: py310-dj32-wt3
-              python-version: 3.10
+              python-version: '3.10'
             - toxenv: py310-dj40-wt3
-              python-version: 3.10
+              python-version: '3.10'
 
             - toxenv: py38-dj32-wt4
               python-version: 3.8
@@ -272,11 +272,11 @@ jobs:
               python-version: 3.9
 
             - toxenv: py310-dj32-wt4
-              python-version: 3.10
+              python-version: '3.10'
             - toxenv: py310-dj40-wt4
-              python-version: 3.10
+              python-version: '3.10'
             - toxenv: py310-dj41-wt4
-              python-version: 3.10
+              python-version: '3.10'
 
     services:
       postgres:
