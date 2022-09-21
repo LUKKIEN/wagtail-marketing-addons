@@ -4,7 +4,7 @@ from wagtail import VERSION as WAGTAIL_VERSION
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DATABASE_ENGINE' , 'django.db.backends.postgresql_psycopg2'),
+        'ENGINE': os.getenv('DATABASE_ENGINE', 'django.db.backends.postgresql_psycopg2'),
         'NAME': os.getenv('DATABASE_NAME', 'wagtail_marketing'),
         'HOST': os.getenv('DATABASE_HOST', ''),
         'USER': os.getenv('DATABASE_USER', ''),
