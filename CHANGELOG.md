@@ -1,4 +1,4 @@
-# 0.7 (next)
+# 0.7 (22-09-2022)
 
 - Dropped official support for Python 3.6. While this Python version is still supported up to Wagtail 2.15,
   it is no longer maintained. There are no known issues with Python 3.6.
