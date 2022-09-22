@@ -1,3 +1,9 @@
+# 0.7 (next)
+
+- Dropped official support for Python 3.6. While this Python version is still supported up to Wagtail 2.15,
+  it is no longer maintained. There are no known issues with Python 3.6.
+- Officially supports up to Wagtail 4.0
+
 # 0.6 (03-12-2020)
 
 - Dropped official support for Wagtail versions lower than 2.11, earlier versions are no longer supported. 

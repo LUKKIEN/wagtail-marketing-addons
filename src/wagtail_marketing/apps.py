@@ -10,6 +10,6 @@ class WagtailMarketingConfig(AppConfig):
     def ready(self):
         if not self.apps.is_installed('wagtail.contrib.modeladmin'):
             raise RuntimeError(
-                'You need to register wagtail.contrib.modeladmin in your INSTALLED_APPS'
+                'You need to register wagtail.contrib.modeladmin in your INSTALLED_APPS '
                 'in order for wagtail-marketing-addons to work'
             )
