@@ -80,16 +80,12 @@ jobs:
             - py310-dj3-wt215
             - py310-dj31-wt215
             - py310-dj32-wt215
-            - py37-dj32-wt216
-            - py37-dj4-wt216
             - py38-dj32-wt216
             - py38-dj4-wt216
             - py39-dj32-wt216
             - py39-dj4-wt216
             - py310-dj32-wt216
             - py310-dj4-wt216
-            - py37-dj32-wt3
-            - py37-dj4-wt3
             - py38-dj32-wt3
             - py38-dj4-wt3
             - py39-dj32-wt3
@@ -217,11 +213,6 @@ jobs:
             - toxenv: py310-dj32-wt215
               python-version: '3.10'
 
-            - toxenv: py37-dj32-wt216
-              python-version: 3.7
-            - toxenv: py37-dj4-wt216
-              python-version: 3.7
-
             - toxenv: py38-dj32-wt216
               python-version: 3.8
             - toxenv: py38-dj4-wt216
@@ -236,11 +227,6 @@ jobs:
               python-version: '3.10'
             - toxenv: py310-dj4-wt216
               python-version: '3.10'
-
-            - toxenv: py37-dj32-wt3
-              python-version: 3.7
-            - toxenv: py37-dj4-wt3
-              python-version: 3.7
 
             - toxenv: py38-dj32-wt3
               python-version: 3.8
