@@ -16,7 +16,7 @@ DEFAULT_SETTINGS = {
 
 
 def get_wagtail_marketing_setting(name):
-    return getattr(settings, 'WAGTAIL_MARKETING_{}'.format(name), DEFAULT_SETTINGS[name])
+    return getattr(settings, f'WAGTAIL_MARKETING_{name}', DEFAULT_SETTINGS[name])
 
 
 def get_page_model():
@@ -31,5 +31,5 @@ def get_page_model():
         raise ImproperlyConfigured("WAGTAIL_MARKETING_PAGE_MODEL must be of the form 'app_label.model_name'")
     except LookupError:
         raise ImproperlyConfigured(
-            "WAGTAIL_MARKETING_PAGE_MODEL refers to model '{}' that has not been installed".format(page)
+            f"WAGTAIL_MARKETING_PAGE_MODEL refers to model '{page}' that has not been installed"
         )

@@ -5,10 +5,8 @@ from django.contrib.auth import get_user_model
 class UserFactory(factory.django.DjangoModelFactory):
     first_name = factory.Faker('first_name')
     last_name = factory.Faker('last_name')
-    username = factory.LazyAttributeSequence(
-        lambda user, n: '{}{}_{}'.format(user.first_name, user.last_name, n))
-
-    email = factory.LazyAttributeSequence(lambda user, n: '{}{}@example.com'.format(user.username, n))
+    username = factory.LazyAttributeSequence(lambda user, n: f'{user.first_name}{user.last_name}_{n}')
+    email = factory.LazyAttributeSequence(lambda user, n: f'{user.username}{n}@example.com')
     password = 'supersecret'
 
     is_active = True
