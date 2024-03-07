@@ -1,10 +1,8 @@
 import os
 
-from wagtail import VERSION as WAGTAIL_VERSION
-
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DATABASE_ENGINE', 'django.db.backends.postgresql_psycopg2'),
+        'ENGINE': os.getenv('DATABASE_ENGINE', 'django.db.backends.postgresql'),
         'NAME': os.getenv('DATABASE_NAME', 'wagtail_marketing'),
         'HOST': os.getenv('DATABASE_HOST', ''),
         'USER': os.getenv('DATABASE_USER', ''),
@@ -65,11 +63,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
-if WAGTAIL_VERSION < (2, 9):
-    MIDDLEWARE = MIDDLEWARE + ['wagtail.core.middleware.SiteMiddleware']
-
-
 INSTALLED_APPS = (
     'wagtail_marketing',
 
@@ -80,7 +73,7 @@ INSTALLED_APPS = (
     'wagtail.images',
     'wagtail.documents',
     'wagtail.admin',
-    'wagtail.core',
+    'wagtail',
     'wagtail.contrib.redirects',
 
     'taggit',

@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from wagtail.contrib.modeladmin.options import ModelAdmin, ModelAdminGroup, modeladmin_register
 
 from wagtail_marketing.conf import get_page_model, get_wagtail_marketing_setting
-from wagtail_marketing.helpers import PageAdminURLHelper, SeoHelper
+from wagtail_marketing.helpers import PageAdminURLHelper, SeoHelper, UserCannotCreatePermissionHelper
 
 
 class SeoListingAdmin(ModelAdmin):
@@ -15,6 +15,7 @@ class SeoListingAdmin(ModelAdmin):
     ordering = ('-seo_title', '-search_description')
     search_fields = ('title', 'seo_title', 'search_description')
     url_helper_class = PageAdminURLHelper
+    permission_helper_class = UserCannotCreatePermissionHelper
 
     def seo_helper(self, obj):
         return SeoHelper(obj.get_admin_display_title(), obj.seo_title, obj.search_description)

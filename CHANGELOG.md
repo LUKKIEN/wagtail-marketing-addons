@@ -1,3 +1,9 @@
+# 0.8 (In development)
+
+- Dropped official support for Wagtail 4 and lower
+- Officially supports up to Wagtail 5.2
+- Added a permission helper to remove the add button on the seo listing page
+
 # 0.7 (22-09-2022)
 
 - Dropped official support for Python 3.6. While this Python version is still supported up to Wagtail 2.15,

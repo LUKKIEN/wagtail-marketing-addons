@@ -1,6 +1,6 @@
 import pytest
 from django.utils.html import format_html
-from wagtail.core.models import Page
+from wagtail.models import Page
 
 from tests.factories.page import PageFactory
 from wagtail_marketing.helpers import SeoHelper
@@ -9,7 +9,7 @@ from wagtail_marketing.wagtail_hooks import SeoListingAdmin
 
 @pytest.mark.django_db
 class TestSeoListingAdmin:
-    def setup(self):
+    def setup_method(self):
         self.seolist = SeoListingAdmin()
 
     def test_seo_helper(self):
