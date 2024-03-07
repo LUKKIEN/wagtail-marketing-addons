@@ -13,7 +13,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: 3.10
 
       - name: Install dependencies
         run: |
@@ -32,238 +32,38 @@ jobs:
     strategy:
       matrix:
         toxenv:
-            - py37-dj22-wt211
-            - py37-dj3-wt211
-            - py37-dj31-wt211
-            - py38-dj22-wt211
-            - py38-dj3-wt211
-            - py38-dj31-wt211
-            - py37-dj22-wt212
-            - py37-dj3-wt212
-            - py37-dj31-wt212
-            - py38-dj22-wt212
-            - py38-dj3-wt212
-            - py38-dj31-wt212
-            - py39-dj22-wt212
-            - py39-dj3-wt212
-            - py39-dj31-wt212
-            - py37-dj22-wt213
-            - py37-dj3-wt213
-            - py37-dj31-wt213
-            - py37-dj32-wt213
-            - py38-dj22-wt213
-            - py38-dj3-wt213
-            - py38-dj31-wt213
-            - py38-dj32-wt213
-            - py39-dj22-wt213
-            - py39-dj3-wt213
-            - py39-dj31-wt213
-            - py39-dj32-wt213
-            - py37-dj3-wt214
-            - py37-dj31-wt214
-            - py37-dj32-wt214
-            - py38-dj3-wt214
-            - py38-dj31-wt214
-            - py38-dj32-wt214
-            - py39-dj3-wt214
-            - py39-dj31-wt214
-            - py39-dj32-wt214
-            - py37-dj3-wt215
-            - py37-dj31-wt215
-            - py37-dj32-wt215
-            - py38-dj3-wt215
-            - py38-dj31-wt215
-            - py38-dj32-wt215
-            - py39-dj3-wt215
-            - py39-dj31-wt215
-            - py39-dj32-wt215
-            - py310-dj3-wt215
-            - py310-dj31-wt215
-            - py310-dj32-wt215
-            - py38-dj32-wt216
-            - py38-dj4-wt216
-            - py39-dj32-wt216
-            - py39-dj4-wt216
-            - py310-dj32-wt216
-            - py310-dj4-wt216
-            - py38-dj32-wt3
-            - py38-dj4-wt3
-            - py39-dj32-wt3
-            - py39-dj4-wt3
-            - py310-dj32-wt3
-            - py310-dj4-wt3
-            - py38-dj32-wt4
-            - py38-dj4-wt4
-            - py38-dj41-wt4
-            - py39-dj32-wt4
-            - py39-dj4-wt4
-            - py39-dj41-wt4
-            - py310-dj32-wt4
-            - py310-dj4-wt4
-            - py310-dj41-wt4
+            - py38-dj42-wt5
+            - py39-dj42-wt5
+            - py310-dj42-wt5
+
+            - py38-dj42-wt51
+            - py39-dj42-wt51
+            - py310-dj42-wt51
+
+            - py38-dj42-wt52
+            - py39-dj42-wt52
+            - py310-dj42-wt52
         include:
-            - toxenv: py37-dj22-wt211
-              python-version: 3.7
-            - toxenv: py37-dj3-wt211
-              python-version: 3.7
-            - toxenv: py37-dj31-wt211
-              python-version: 3.7
-
-            - toxenv: py38-dj22-wt211
+            - toxenv: py38-dj42-wt5
               python-version: 3.8
-            - toxenv: py38-dj3-wt211
-              python-version: 3.8
-            - toxenv: py38-dj31-wt211
-              python-version: 3.8
-
-            - toxenv: py37-dj22-wt212
-              python-version: 3.7
-            - toxenv: py37-dj3-wt212
-              python-version: 3.7
-            - toxenv: py37-dj31-wt212
-              python-version: 3.7
-
-            - toxenv: py38-dj22-wt212
-              python-version: 3.8
-            - toxenv: py38-dj3-wt212
-              python-version: 3.8
-            - toxenv: py38-dj31-wt212
-              python-version: 3.8
-
-            - toxenv: py39-dj22-wt212
+            - toxenv: py39-dj42-wt5
               python-version: 3.9
-            - toxenv: py39-dj3-wt212
-              python-version: 3.9
-            - toxenv: py39-dj31-wt212
-              python-version: 3.9
-
-            - toxenv: py37-dj22-wt213
-              python-version: 3.7
-            - toxenv: py37-dj3-wt213
-              python-version: 3.7
-            - toxenv: py37-dj31-wt213
-              python-version: 3.7
-            - toxenv: py37-dj32-wt213
-              python-version: 3.7
-
-            - toxenv: py38-dj22-wt213
-              python-version: 3.8
-            - toxenv: py38-dj3-wt213
-              python-version: 3.8
-            - toxenv: py38-dj31-wt213
-              python-version: 3.8
-            - toxenv: py38-dj32-wt213
-              python-version: 3.8
-
-            - toxenv: py39-dj22-wt213
-              python-version: 3.9
-            - toxenv: py39-dj3-wt213
-              python-version: 3.9
-            - toxenv: py39-dj31-wt213
-              python-version: 3.9
-            - toxenv: py39-dj32-wt213
-              python-version: 3.9
-
-            - toxenv: py37-dj3-wt214
-              python-version: 3.7
-            - toxenv: py37-dj31-wt214
-              python-version: 3.7
-            - toxenv: py37-dj32-wt214
-              python-version: 3.7
-
-            - toxenv: py38-dj3-wt214
-              python-version: 3.8
-            - toxenv: py38-dj31-wt214
-              python-version: 3.8
-            - toxenv: py38-dj32-wt214
-              python-version: 3.8
-
-            - toxenv: py39-dj3-wt214
-              python-version: 3.9
-            - toxenv: py39-dj31-wt214
-              python-version: 3.9
-            - toxenv: py39-dj32-wt214
-              python-version: 3.9
-
-            - toxenv: py37-dj3-wt215
-              python-version: 3.7
-            - toxenv: py37-dj31-wt215
-              python-version: 3.7
-            - toxenv: py37-dj32-wt215
-              python-version: 3.7
-
-            - toxenv: py38-dj3-wt215
-              python-version: 3.8
-            - toxenv: py38-dj31-wt215
-              python-version: 3.8
-            - toxenv: py38-dj32-wt215
-              python-version: 3.8
-
-            - toxenv: py39-dj3-wt215
-              python-version: 3.9
-            - toxenv: py39-dj31-wt215
-              python-version: 3.9
-            - toxenv: py39-dj32-wt215
-              python-version: 3.9
-
-            - toxenv: py310-dj3-wt215
-              python-version: '3.10'
-            - toxenv: py310-dj31-wt215
-              python-version: '3.10'
-            - toxenv: py310-dj32-wt215
+            - toxenv: py310-dj42-wt5
               python-version: '3.10'
 
-            - toxenv: py38-dj32-wt216
+            - toxenv: py38-dj42-wt51
               python-version: 3.8
-            - toxenv: py38-dj4-wt216
-              python-version: 3.8
-
-            - toxenv: py39-dj32-wt216
+            - toxenv: py39-dj42-wt51
               python-version: 3.9
-            - toxenv: py39-dj4-wt216
-              python-version: 3.9
-
-            - toxenv: py310-dj32-wt216
-              python-version: '3.10'
-            - toxenv: py310-dj4-wt216
+            - toxenv: py310-dj42-wt51
               python-version: '3.10'
 
-            - toxenv: py38-dj32-wt3
+            - toxenv: py38-dj42-wt52
               python-version: 3.8
-            - toxenv: py38-dj4-wt3
-              python-version: 3.8
-
-            - toxenv: py39-dj32-wt3
+            - toxenv: py39-dj42-wt52
               python-version: 3.9
-            - toxenv: py39-dj4-wt3
-              python-version: 3.9
-
-            - toxenv: py310-dj32-wt3
+            - toxenv: py310-dj42-wt52
               python-version: '3.10'
-            - toxenv: py310-dj4-wt3
-              python-version: '3.10'
-
-            - toxenv: py38-dj32-wt4
-              python-version: 3.8
-            - toxenv: py38-dj4-wt4
-              python-version: 3.8
-            - toxenv: py38-dj41-wt4
-              python-version: 3.8
-
-            - toxenv: py39-dj32-wt4
-              python-version: 3.9
-            - toxenv: py39-dj4-wt4
-              python-version: 3.9
-            - toxenv: py39-dj41-wt4
-              python-version: 3.9
-
-            - toxenv: py310-dj32-wt4
-              python-version: '3.10'
-            - toxenv: py310-dj4-wt4
-              python-version: '3.10'
-            - toxenv: py310-dj41-wt4
-              python-version: '3.10'
-
     services:
       postgres:
         image: postgres:12
