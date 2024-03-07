@@ -1,4 +1,4 @@
-# 0.8 (In development)
+# 0.8 (07-03-2024)
 
 - Dropped official support for Wagtail 4 and lower
 - Officially supports up to Wagtail 5.2
