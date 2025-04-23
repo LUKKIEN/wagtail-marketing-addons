@@ -32,26 +32,26 @@ jobs:
     strategy:
       matrix:
         toxenv:
-            - py310-dj42-wt6
-            - py311-dj42-wt6
-            - py312-dj42-wt6
+            - py310-dj51-wt6
+            - py311-dj51-wt6
+            - py312-dj51-wt6
 
-            - py310-dj42-wt52
-            - py311-dj42-wt52
-            - py312-dj42-wt52
+            - py310-dj51-wt52
+            - py311-dj51-wt52
+            - py312-dj51-wt52
         include:
-            - toxenv: py310-dj42-wt6
-              python-version: 3.10
-            - toxenv: py311-dj42-wt6
-              python-version: 3.11
-            - toxenv: py312-dj42-wt6
+            - toxenv: py310-dj51-wt6
+              python-version: '3.10'
+            - toxenv: py311-dj51-wt6
+              python-version: '3.11'
+            - toxenv: py312-dj51-wt6
               python-version: '3.12'
 
-            - toxenv: py310-dj42-wt52
-              python-version: 3.10
-            - toxenv: py311-dj42-wt52
-              python-version: 3.11
-            - toxenv: py312-dj42-wt52
+            - toxenv: py310-dj51-wt52
+              python-version: '3.10'
+            - toxenv: py311-dj51-wt52
+              python-version: '3.11'
+            - toxenv: py312-dj51-wt52
               python-version: '3.12'
     services:
       postgres:
