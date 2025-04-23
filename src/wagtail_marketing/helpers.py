@@ -1,7 +1,7 @@
 from django.core.exceptions import ImproperlyConfigured
 from django.template.defaultfilters import truncatechars
-from wagtail.contrib.modeladmin.helpers import PageAdminURLHelper as AbstractPageAdminURLHelper
-from wagtail.contrib.modeladmin.helpers import PagePermissionHelper
+from wagtail_modeladmin.helpers import PageAdminURLHelper as AbstractPageAdminURLHelper
+from wagtail_modeladmin.helpers import PagePermissionHelper
 
 from wagtail_marketing.conf import get_wagtail_marketing_setting
 
