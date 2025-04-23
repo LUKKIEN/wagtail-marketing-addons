@@ -1,6 +1,6 @@
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
-from wagtail.contrib.modeladmin.options import ModelAdmin, ModelAdminGroup, modeladmin_register
+from wagtail_modeladmin.options import ModelAdmin, ModelAdminGroup, modeladmin_register
 
 from wagtail_marketing.conf import get_page_model, get_wagtail_marketing_setting
 from wagtail_marketing.helpers import PageAdminURLHelper, SeoHelper, UserCannotCreatePermissionHelper

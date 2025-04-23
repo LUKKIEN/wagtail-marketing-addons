@@ -32,41 +32,30 @@ jobs:
     strategy:
       matrix:
         toxenv:
-            - py38-dj42-wt5
-            - py39-dj42-wt5
-            - py310-dj42-wt5
+            - py310-dj51-wt6
+            - py311-dj51-wt6
+            - py312-dj51-wt6
 
-            - py38-dj42-wt51
-            - py39-dj42-wt51
-            - py310-dj42-wt51
-
-            - py38-dj42-wt52
-            - py39-dj42-wt52
-            - py310-dj42-wt52
+            - py310-dj51-wt52
+            - py311-dj51-wt52
+            - py312-dj51-wt52
         include:
-            - toxenv: py38-dj42-wt5
-              python-version: 3.8
-            - toxenv: py39-dj42-wt5
-              python-version: 3.9
-            - toxenv: py310-dj42-wt5
+            - toxenv: py310-dj51-wt6
               python-version: '3.10'
+            - toxenv: py311-dj51-wt6
+              python-version: '3.11'
+            - toxenv: py312-dj51-wt6
+              python-version: '3.12'
 
-            - toxenv: py38-dj42-wt51
-              python-version: 3.8
-            - toxenv: py39-dj42-wt51
-              python-version: 3.9
-            - toxenv: py310-dj42-wt51
+            - toxenv: py310-dj51-wt52
               python-version: '3.10'
-
-            - toxenv: py38-dj42-wt52
-              python-version: 3.8
-            - toxenv: py39-dj42-wt52
-              python-version: 3.9
-            - toxenv: py310-dj42-wt52
-              python-version: '3.10'
+            - toxenv: py311-dj51-wt52
+              python-version: '3.11'
+            - toxenv: py312-dj51-wt52
+              python-version: '3.12'
     services:
       postgres:
-        image: postgres:12
+        image: postgres:14
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5

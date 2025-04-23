@@ -41,6 +41,9 @@ setup(
     author='Lukkien BV',
     author_email='support@lukkien.com',
     url='https://www.lukkien.com/',
+    install_requires=[
+        'wagtail-modeladmin>2.0.0'
+    ],
     extras_require={
         'test': tests_require,
         'doc': docs_require,
@@ -64,6 +67,7 @@ setup(
         'Framework :: Django',
         'Framework :: Wagtail',
         'Framework :: Wagtail :: 5',
+        'Framework :: Wagtail :: 6',
         'Topic :: Internet :: WWW/HTTP :: Site Management',
     ]
 )

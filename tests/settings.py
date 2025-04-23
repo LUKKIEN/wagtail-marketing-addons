@@ -30,6 +30,8 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
+FORMS_URLFIELD_ASSUME_HTTPS = True
+
 USE_TZ = False
 
 TESTS_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -66,7 +68,7 @@ MIDDLEWARE = [
 INSTALLED_APPS = (
     'wagtail_marketing',
 
-    'wagtail.contrib.modeladmin',
+    'wagtail_modeladmin',
     'wagtail.search',
     'wagtail.sites',
     'wagtail.users',

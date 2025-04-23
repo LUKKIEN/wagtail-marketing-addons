@@ -8,8 +8,8 @@ class WagtailMarketingConfig(AppConfig):
     verbose_name = _("Wagtail Marketing")
 
     def ready(self):
-        if not self.apps.is_installed('wagtail.contrib.modeladmin'):
+        if not self.apps.is_installed('wagtail_modeladmin'):
             raise RuntimeError(
-                'You need to register wagtail.contrib.modeladmin in your INSTALLED_APPS '
+                'You need to register wagtail_modeladmin in your INSTALLED_APPS '
                 'in order for wagtail-marketing-addons to work'
             )

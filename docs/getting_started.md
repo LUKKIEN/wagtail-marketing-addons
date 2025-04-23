@@ -20,7 +20,7 @@ Add it to your `INSTALLED_APPS`:
 INSTALLED_APPS = [
     # ...
     'wagtail_marketing',
-    'wagtail.contrib.modeladmin', # this package and its seo listing depends on the modeladmin
+    'wagtail_modeladmin', # this package and its seo listing depends on the modeladmin
     # ...
 ]
 ```
