@@ -32,30 +32,19 @@ jobs:
     strategy:
       matrix:
         toxenv:
-            - py38-dj42-wt5
-            - py39-dj42-wt5
-            - py310-dj42-wt5
-
-            - py38-dj42-wt51
-            - py39-dj42-wt51
-            - py310-dj42-wt51
+            - py38-dj42-wt6
+            - py39-dj42-wt6
+            - py310-dj42-wt6
 
             - py38-dj42-wt52
             - py39-dj42-wt52
             - py310-dj42-wt52
         include:
-            - toxenv: py38-dj42-wt5
+            - toxenv: py38-dj42-wt6
               python-version: 3.8
-            - toxenv: py39-dj42-wt5
+            - toxenv: py39-dj42-wt6
               python-version: 3.9
-            - toxenv: py310-dj42-wt5
-              python-version: '3.10'
-
-            - toxenv: py38-dj42-wt51
-              python-version: 3.8
-            - toxenv: py39-dj42-wt51
-              python-version: 3.9
-            - toxenv: py310-dj42-wt51
+            - toxenv: py310-dj42-wt6
               python-version: '3.10'
 
             - toxenv: py38-dj42-wt52
